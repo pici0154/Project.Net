@@ -1,0 +1,66 @@
+<h1 id="tableLabel">Cost Items</h1>
+
+<p>This component demonstrates fetching data from the cost item server.</p>
+
+<p *ngIf="!costItems"><em>Loading...</em></p>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="costItems">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Sum</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Currency</th>
+            <th>Type</th>
+            <th>Number of comments </th>
+            <th>Operatii</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let costItem of costItems">
+            <td>{{ costItem.description }}</td>
+            <td>{{ costItem.sum }}</td>
+            <td>{{ costItem.location }}</td>
+            <td>{{ costItem.date }}</td>
+            <td>{{ costItem.currency }}</td>
+            <td>{{ costItem.type }}</td>
+            <td>{{ costItem.numberOfComments }}</td>
+            <td>
+                <a class="btn btn-primary" [routerLink]="['/fetch-data', costItem.id]" routerLinkActive="active">Details</a> |
+                <a class="btn btn-info" (click)="edit($event,costItem.id)" >Edit</a> |
+                <a class="btn btn-danger" (click)="delete(costItem.id)">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<p>Add a new cost </p>
+<p>Description:</p>
+<input [(ngModel)]="description" id="description" />
+<p>{{description}}</p><p style="color:red;">{{descriptionE}}</p>
+
+<p>Sum:</p>
+<input [(ngModel)]="sum" id="sum" />
+<p>{{sum}}</p><p style="color:red;">{{sumE}}</p>
+
+<p>Currency:</p>
+<input [(ngModel)]="currency" id="currency" />
+<p>{{currency}}</p>
+
+<p>Location:</p>
+<input [(ngModel)]="location" id="location" />
+<p>{{location}}</p>
+
+<p>Date:</p>
+<input type="date" [(ngModel)]="date" id="date" />
+<p>{{date}}</p>
+
+<p>Type: </p>
+<input [(ngModel)]="type" id="type" />
+<p>{{type}}</p><p style="color:red;">{{typeE}}</p>
+
+<button (click)="submit()">Submit!</button>
+
+
