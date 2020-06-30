@@ -6,11 +6,36 @@
     <members>
         <member name="M:Project.Net.Controllers.AngajatsController.GetAngajati(System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})">
             <summary>
-            Get a list of all CostItems. The list can be fitered by date ( from - to ) and by type.
+            Get a list of all Employees. The list can be fitered by date ( from - to ).
             </summary>
-            <param name="from"> Filter costs by date from. If the parameter is empty, all the costs will be displayed </param>
-            <param name="to"> Filter costs by date to. If the parameter is empty, all the costs will be displayed</param>
-            <returns>A list of costs</returns>
+            <param name="from"> Filter employees by date from. If the parameter is empty, all the employees will be displayed </param>
+            <param name="to"> Filter employees by date to. If the parameter is empty, all the employees will be displayed</param>
+            <returns>A list of employees</returns>
         </member>
+        <!-- Badly formed XML comment ignored for member "M:Project.Net.Controllers.AngajatsController.GetAngajat(System.Int64)" -->
+        <!-- Badly formed XML comment ignored for member "M:Project.Net.Controllers.AngajatsController.PutAngajat(System.Int64,Project.Net.Models.Angajat)" -->
+        <!-- Badly formed XML comment ignored for member "M:Project.Net.Controllers.AngajatsController.PostAngajat(Project.Net.Models.Angajat)" -->
+        <!-- Badly formed XML comment ignored for member "M:Project.Net.Controllers.AngajatsController.DeleteAngajat(System.Int64)" -->
+        <member name="M:Project.Net.Controllers.UtilizatorsController.GetUtilizatori(System.String)">
+            <summary>
+            Get a list of all Users.  
+            </summary>
+            /// <param name="nume"> Filter users by name. If the parameter is empty, all the users will be displayed </param>
+            <returns>A list of users</returns>
+        </member>
+        <member name="M:Project.Net.Controllers.UtilizatorsController.GetUtilizator(System.Int64)">
+            <summary>
+            Get a specific user. 
+            </summary>
+            <returns>The requested user</returns>
+        </member>
+        <member name="M:Project.Net.Controllers.UtilizatorsController.PutUtilizator(System.Int64,Project.Net.Models.Utilizator)">
+            <summary>
+            Update a specific user.
+            </summary>
+            <returns>User with the updated data</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Project.Net.Controllers.UtilizatorsController.PostUtilizator(Project.Net.Models.Utilizator)" -->
+        <!-- Badly formed XML comment ignored for member "M:Project.Net.Controllers.UtilizatorsController.DeleteUtilizator(System.Int64)" -->
     </members>
 </doc>

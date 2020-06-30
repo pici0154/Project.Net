@@ -22,11 +22,11 @@ namespace Project.Net.Controllers
         }
 
         /// <summary>
-        /// Get a list of all CostItems. The list can be fitered by date ( from - to ) and by type.
+        /// Get a list of all Employees. The list can be fitered by date ( from - to ).
         /// </summary>
-        /// <param name="from"> Filter costs by date from. If the parameter is empty, all the costs will be displayed </param>
-        /// <param name="to"> Filter costs by date to. If the parameter is empty, all the costs will be displayed</param>
-        /// <returns>A list of costs</returns>
+        /// <param name="from"> Filter employees by date from. If the parameter is empty, all the employees will be displayed </param>
+        /// <param name="to"> Filter employees by date to. If the parameter is empty, all the employees will be displayed</param>
+        /// <returns>A list of employees</returns>
         // GET: api/CostItems
         // GET: api/Angajats
         [HttpGet]
@@ -60,6 +60,9 @@ namespace Project.Net.Controllers
             //      return await _context.Angajati.ToListAsync();
         }
 
+        /// <summary>
+        /// Get a specific Employee. 
+        /// <returns>Returns the searched employee</returns>
         // GET: api/Angajats/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Angajat>> GetAngajat(long id)
@@ -74,6 +77,9 @@ namespace Project.Net.Controllers
             return angajat;
         }
 
+        /// <summary>
+        /// Update a specific Employee. 
+        /// <returns>Update the given employee</returns>
         // PUT: api/Angajats/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
@@ -106,6 +112,9 @@ namespace Project.Net.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Create a specific Employee. 
+        /// <returns> Creates the given employee</returns>
         // POST: api/Angajats
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
@@ -118,6 +127,9 @@ namespace Project.Net.Controllers
             return CreatedAtAction("GetAngajat", new { id = angajat.Id_Angajat }, angajat);
         }
 
+        /// <summary>
+        /// Delete a specific Employee. 
+        /// <returns> Return a list of employees, without the deleted employee.</returns>
         // DELETE: api/Angajats/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Angajat>> DeleteAngajat(long id)
