@@ -13,7 +13,7 @@ namespace Project.Net.Models
        
         public string Nume { get; set; }
 
-        public DateTimeOffset Data { get; set; }
+        public DateTime Data { get; set; }
 
         public TimeSpan Ora_Start { get; set; }
 

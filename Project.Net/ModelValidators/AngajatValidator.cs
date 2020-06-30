@@ -11,7 +11,8 @@ namespace Project.Net.ModelValidators
     {
 		public AngajatValidator(AngajatDBContext context)
 		{
-			RuleFor(x => x.Nume).NotNull();
+			RuleFor(x => x.Nume).NotNull()
+								.WithMessage("Va rugam intorduceti numele si prenumele!");
 
 			 
 		}

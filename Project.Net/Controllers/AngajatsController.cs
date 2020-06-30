@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project.Net.Models;
+using Project.Net.ViewModels;
 
 namespace Project.Net.Controllers
 {
@@ -20,9 +21,16 @@ namespace Project.Net.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Get a list of all CostItems. The list can be fitered by date ( from - to ) and by type.
+        /// </summary>
+        /// <param name="from"> Filter costs by date from. If the parameter is empty, all the costs will be displayed </param>
+        /// <param name="to"> Filter costs by date to. If the parameter is empty, all the costs will be displayed</param>
+        /// <returns>A list of costs</returns>
+        // GET: api/CostItems
         // GET: api/Angajats
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Angajat>>> GetAngajati(
+        public async Task<ActionResult<IEnumerable<AngajatiDetalii>>> GetAngajati(
              [FromQuery] DateTimeOffset? from = null,
             [FromQuery] DateTimeOffset? to = null)
         {
@@ -43,13 +51,13 @@ namespace Project.Net.Controllers
             }
 
             var resultList = await result
-                .OrderByDescending(f => f.Nume)
                 .Include(f => f.Santier)
-                // .Select(f => FlowerWithNumberOfComments.FromFlower(f))
+                 .Select(f => AngajatiDetalii.FromSantier(f))
                 .ToListAsync();
+
             return resultList;
 
-            // return await _context.Angajati.ToListAsync();
+            //      return await _context.Angajati.ToListAsync();
         }
 
         // GET: api/Angajats/5

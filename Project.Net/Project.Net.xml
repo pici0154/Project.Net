@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Project.Net</name>
+    </assembly>
+    <members>
+        <member name="M:Project.Net.Controllers.AngajatsController.GetAngajati(System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})">
+            <summary>
+            Get a list of all CostItems. The list can be fitered by date ( from - to ) and by type.
+            </summary>
+            <param name="from"> Filter costs by date from. If the parameter is empty, all the costs will be displayed </param>
+            <param name="to"> Filter costs by date to. If the parameter is empty, all the costs will be displayed</param>
+            <returns>A list of costs</returns>
+        </member>
+    </members>
+</doc>

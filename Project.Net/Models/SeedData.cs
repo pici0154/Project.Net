@@ -36,36 +36,52 @@ namespace Project.Net.Models
                 context.Angajati.AddRange(
                     new Angajat
                     {
-                    //    Id_Angajat = 1,
+                        //    Id_Angajat = 1,
 
                         Nume = "test ",
 
                         Data = DateTime.Now,
 
-                        Ora_Start = new TimeSpan(10, 2, 3),
+                        Ora_Start = new TimeSpan(10, 2, 30),//new TimeSpan(10, 2, 30),
 
-                        Ora_Stop = new TimeSpan(11, 2, 4),
+                        Ora_Stop = new TimeSpan(10, 2, 30), //new TimeSpan(10, 2, 30),
 
-                        Pauza = new TimeSpan(0, 3, 0)
+                        Pauza = new TimeSpan(10, 2, 30),// new TimeSpan(10, 2, 30)
                     },
                      new Angajat
                      {
-                        // Id_Angajat = 2,
+                         // Id_Angajat = 2,
 
                          Nume = "test 2 ",
 
-                         Data = DateTime.Now,
+                         Data = DateTime.Today,
 
-                         Ora_Start = new TimeSpan(10, 2, 3),
+                         Ora_Start = new TimeSpan(10, 2, 30),
 
-                         Ora_Stop = new TimeSpan(11, 2, 4),
+                         Ora_Stop = new TimeSpan(10, 2, 30),
 
-                         Pauza = new TimeSpan(0, 3, 0)
+                         Pauza = new TimeSpan(10, 2, 30), // new TimeSpan(10, 2, 30)
                      }
 
-
-
                 );
+
+
+                //////// Look for any flowers.
+                ////if (context.Santiere.Any())
+                ////{
+                ////    return;   // DB table has been seeded
+                ////}
+
+                ////context.Santiere.AddRange(
+                ////    new Santier
+                ////    {
+                ////        Locatie = "Cluj",
+                ////        Nume_Santier = "Gheorgheni",
+                    
+                ////    }
+
+                ////);
+
                 context.SaveChanges();
             }
         }
