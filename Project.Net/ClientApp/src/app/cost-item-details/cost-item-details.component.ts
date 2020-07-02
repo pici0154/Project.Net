@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./cost-item-details.component.css']
 })
 export class CostItemDetailsComponent implements OnInit {
-    private costItem: CostItemWithDetails;
+    private angajat: AngajatiCuSantiere;
 
 
     public enableEdit: boolean = false;
@@ -21,35 +21,33 @@ export class CostItemDetailsComponent implements OnInit {
         private route: ActivatedRoute) {
 
     }
-    loadCostItem(costItemId: string) {
-        this.http.get<CostItemWithDetails>(this.baseUrl + 'api/costItems/' + costItemId).subscribe(result => {
-            this.costItem = result;
-            console.log(this.costItem);
+    loadCostItem(angajatId: string) {
+        this.http.get<AngajatiCuSantiere>(this.baseUrl + 'api/angajats/' + angajatId).subscribe(result => {
+            this.angajat = result;
+            console.log(this.angajat);
         }, error => console.error(error));
     }
     ngOnInit(): void {
         this.route.paramMap.subscribe(params => {
-            this.loadCostItem(params.get('costItemId'));
+            this.loadCostItem(params.get('santierId'));
         });
   }
-    edit(costItemId: number) {
+    edit(santierId: number) {
         this.enableEdit = true;
-        this.enableEditIndex = costItemId;
-        console.log(costItemId);
+        this.enableEditIndex = santierId;
+        console.log(santierId);
     }
 }
-interface CostItemWithDetails {
-    id: number;
-    description: string;
-    sum: number;
-    location: string;
+interface AngajatiCuSantiere {
+    nume: number;
+    data: Date;
+    ora_start: Date;
+    ora_stop: Date;
     date: Date;
-    currency: string;
-    type: string;
-    comments: Comment[];
+    santiere: Santiere[];
 }
 
-interface Comments {
-    text: string;
-    important: boolean; 
+interface Santiere {
+    nume_santier: string;
+    locatie: string; 
 }

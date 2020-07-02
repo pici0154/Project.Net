@@ -1,91 +1,82 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { TimeInterval } from 'rxjs';
 
 @Component({
     selector: 'app-fetch-data',
     templateUrl: './fetch-data.component.html'
 })
 export class FetchDataComponent {
-    public costItems: CostItem[];
+    public angajats: Angajat[];
 
-    public description: string = ' ';
-    public sum: number;
-    public location: string = ' ';
-    public date: Date;
-    public currency: string = ' ';
-    public type: CostType;
+    public id: number ;
+    public nume: string;
+    public data: Date ;
+    public ora_start: Date;
+    public ora_stop: Date ;
+    public pauza: Date;
+    public adaugatde: string;
 
-
-    public descriptionE: string = ' ';
-    public sumE : string = '';
-    public typeE: string = '';
 
     constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
-        this.loadCostItems();
+        this.loadAngajats();
     }
 
 
-    loadCostItems() {
-        this.http.get<CostItem[]>(this.baseUrl + 'api/costItems').subscribe(result => {
-            this.costItems = result;
-            console.log(this.costItems);
+    loadAngajats() {
+        this.http.get<Angajat[]>(this.baseUrl + 'api/angajats').subscribe(result => {
+            this.angajats = result;
+            console.log(this.angajats);
         }, error => console.error(error));
     }
 
-    delete(costItemId: string) {
-        if (confirm('Are you sure you want to delete the cost item with id ' + costItemId + '?')) {
-            this.http.delete(this.baseUrl + 'api/costItems/' + costItemId)
+    delete(angajatId: string) {
+        if (confirm('Are you sure you want to delete the employee with id ' + angajatId + '?')) {
+            this.http.delete(this.baseUrl + 'api/angajats/' + angajatId)
                 .subscribe
                 (
                     result => {
-                        alert('cost Item successfully deleted!');
-                        this.loadCostItems();
+                        alert('employee successfully deleted!');
+                        this.loadAngajats();
                     },
-                    error => alert('Cannot delete cost item - maybe it has comments?')
+                    error => alert('Cannot delete employee - maybe it has comments?')
                 )
         }
     }
 
-    edit(e, costItemId: string) {
-        var costItem: CostItem = <CostItem>{};
-/*
-        costItem.id = Number(costItemId);
-        costItem.description = this.description;
-        costItem.sum = Number(this.sum);
-        costItem.location = this.location;
-        costItem.date = this.date; //new Date;
-        costItem.currency = this.currency;
-        costItem.type = this.type;*/
+    edit(e, angajatId: string) {
+        var angajat: Angajat = <Angajat>{};
+
     }
 
     submit() {
 
-        var costItem: CostItem = <CostItem>{};
-        // costItem.id = 10;
-        costItem.description = this.description;
-        costItem.sum = Number(this.sum); 
-        costItem.location = this.location; 
-        costItem.date = this.date; //new Date;
-        costItem.currency = this.currency; 
-        costItem.type = this.type;
+        var angajat: Angajat = <Angajat>{};
+      
+        angajat.nume = this.nume;
+        angajat.data = this.data; 
+        angajat.ora_start = this.ora_start;
+        angajat.ora_stop = this.ora_stop; //new Date;
+        angajat.pauza = this.pauza; 
+        angajat.adaugatde = this.adaugatde;
 
-        this.http.post(this.baseUrl + 'api/costItems', costItem).subscribe(result => {
+        this.http.post(this.baseUrl + 'api/angajats', angajat).subscribe(result => {
             console.log('success!');
-            this.loadCostItems();
+            this.loadAngajats();
         },
         error => {    
             if (error.status == 400) {
                 console.log(error.error.errors);
                 if (error.error.errors.Sum != "") {
-                    this.sumE = error.error.errors.Sum[0];
+                   // this.sumE = error.error.errors.Sum[0];
 
                 } else if (error.error.errors.Description != "")
                 {
-                    this.descriptionE = error.error.errors.Description[0];
+                   // this.descriptionE = error.error.errors.Description[0];
 
                 } else if (error.error.errors.Type != "") {
 
-                 this.typeE = error.error.errors.Type[0];
+                // this.typeE = error.error.errors.Type[0];
                 }
 
             }
@@ -94,25 +85,12 @@ export class FetchDataComponent {
 }
 
 
-
-interface CostItem {
+interface Angajat {
     id: number;
-    description: string;
-    sum: number;
-    location: string;
-    date: Date;
-    currency: string;
-    type: CostType;
+    nume: string;
+    data: Date;
+    ora_start: Date;
+    ora_stop: Date;
+    pauza: Date;
+    adaugatde: string;
 }
-
-enum CostType {
-    food = 0,
-    utilities = 1,
-    transportation = 2,
-    outing = 3,
-    groceries = 4,
-    clothes = 5,
-    electronics = 6,
-    other = 7
-}
-

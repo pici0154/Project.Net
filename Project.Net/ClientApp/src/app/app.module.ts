@@ -38,7 +38,7 @@ import { CostItemDetailsComponent } from './cost-item-details/cost-item-details.
                 //]
             },
             {
-                path: 'fetch-data/:costItemId',
+                path: 'fetch-data/:angajatId',
                 component: CostItemDetailsComponent,
             },
             { path: 'my-route', component: CounterComponent },

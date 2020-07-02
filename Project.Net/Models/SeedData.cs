@@ -42,11 +42,11 @@ namespace Project.Net.Models
 
                         Data = DateTime.Now,
 
-                        Ora_Start = new TimeSpan(10, 2, 30),//new TimeSpan(10, 2, 30),
+                        Ora_Start = DateTime.Now, //new TimeSpan(10, 2, 30),
 
-                        Ora_Stop = new TimeSpan(10, 2, 30), //new TimeSpan(10, 2, 30),
+                        Ora_Stop = DateTime.Now, //new TimeSpan(10, 2, 30),
 
-                        Pauza = new TimeSpan(10, 2, 30),// new TimeSpan(10, 2, 30)
+                        Pauza = DateTime.Now, // new TimeSpan(10, 2, 30)
                     },
                      new Angajat
                      {
@@ -54,13 +54,13 @@ namespace Project.Net.Models
 
                          Nume = "test 2 ",
 
-                         Data = DateTime.Today,
+                         Data = DateTime.Now,
 
-                         Ora_Start = new TimeSpan(10, 2, 30),
+                         Ora_Start = DateTime.Now, 
 
-                         Ora_Stop = new TimeSpan(10, 2, 30),
+                         Ora_Stop = DateTime.Now, 
 
-                         Pauza = new TimeSpan(10, 2, 30), // new TimeSpan(10, 2, 30)
+                         Pauza = DateTime.Now, // new TimeSpan(10, 2, 30)
                      }
 
                 );

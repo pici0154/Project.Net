@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n\n<p *ngIf=\"!costItem\"><em>Loading...</em></p>\n\n<a [routerLink]=\"['/fetch-data']\" routerLinkActive=\"active\">Back</a>\n\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"costItem\">\n    <tbody>\n\n        <tr>\n            <th>Description</th>\n            <td>{{ costItem.description }}</td>\n        </tr>\n        <tr>\n            <th>Sum</th>\n            <td>{{ costItem.sum }}</td>\n        </tr>\n        <tr>\n            <th>Currency</th>\n            <td>{{ costItem.currency }}</td>\n        </tr>\n        <tr>\n            <th>Location</th>\n            <td>{{ costItem.location }}</td>\n        </tr>\n        <tr>\n            <th>Date</th>\n            <td>{{ costItem.date }}</td>\n        </tr>\n        <tr>\n            <th>Type</th>\n            <td>{{ costItem.type }}</td>\n        </tr>\n    </tbody>\n</table>\n\n<h2>Comments</h2>\n<table *ngIf=\"costItem\">\n    <thead>\n        <tr>\n            <th>Text</th>\n            <th>Important</th>\n        </tr>\n    </thead>\n    <tr *ngFor=\"let comment of costItem.comments\">\n        <td>{{ comment.text }}</td>\n        <td>{{ comment.important }}</td>\n    </tr>\n</table>\n<a [routerLink]=\"['/fetch-data']\" routerLinkActive=\"active\">Back</a>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n<p *ngIf=\"!angajat\"><em>Loading...</em></p>\n\n<a [routerLink]=\"['/fetch-data']\" routerLinkActive=\"active\">Back</a>\n\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"angajat\">\n    <tbody>\n\n        \n    </tbody>\n</table>\n\n<h2>Santiere</h2>\n<table *ngIf=\"angajat\">\n    <thead>\n        <tr>\n            <th>Denumire santier</th>\n            <th>Locatie</th>\n        </tr>\n    </thead>\n    <tr *ngFor=\"let santier of angajat.santiere\">\n        <td>{{ santier.nume_santier }}</td>\n        <td>{{ santier.locatie }}</td>\n    </tr>\n</table>\n<a [routerLink]=\"['/fetch-data']\" routerLinkActive=\"active\">Back</a>\n");
 
 /***/ }),
 
@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1 id=\"tableLabel\">Cost Items</h1>\n\n<p>This component demonstrates fetching data from the cost item server.</p>\n\n<p *ngIf=\"!costItems\"><em>Loading...</em></p>\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"costItems\">\n    <thead>\n        <tr>\n            <th>Description</th>\n            <th>Sum</th>\n            <th>Location</th>\n            <th>Date</th>\n            <th>Currency</th>\n            <th>Type</th>\n            <th>Number of comments </th>\n            <th>Operatii</th>\n\n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let costItem of costItems\">\n            <td>{{ costItem.description }}</td>\n            <td>{{ costItem.sum }}</td>\n            <td>{{ costItem.location }}</td>\n            <td>{{ costItem.date }}</td>\n            <td>{{ costItem.currency }}</td>\n            <td>{{ costItem.type }}</td>\n            <td>{{ costItem.numberOfComments }}</td>\n            <td>\n                <a class=\"btn btn-primary\" [routerLink]=\"['/fetch-data', costItem.id]\" routerLinkActive=\"active\">Details</a> |\n                <a class=\"btn btn-info\" (click)=\"edit($event,costItem.id)\" >Edit</a> |\n                <a class=\"btn btn-danger\" (click)=\"delete(costItem.id)\">Delete</a>\n            </td>\n        </tr>\n    </tbody>\n</table>\n\n\n<p>Add a new cost </p>\n<p>Description:</p>\n<input [(ngModel)]=\"description\" id=\"description\" />\n<p>{{description}}</p><p style=\"color:red;\">{{descriptionE}}</p>\n\n<p>Sum:</p>\n<input [(ngModel)]=\"sum\" id=\"sum\" />\n<p>{{sum}}</p><p style=\"color:red;\">{{sumE}}</p>\n\n<p>Currency:</p>\n<input [(ngModel)]=\"currency\" id=\"currency\" />\n<p>{{currency}}</p>\n\n<p>Location:</p>\n<input [(ngModel)]=\"location\" id=\"location\" />\n<p>{{location}}</p>\n\n<p>Date:</p>\n<input type=\"date\" [(ngModel)]=\"date\" id=\"date\" />\n<p>{{date}}</p>\n\n<p>Type: </p>\n<input [(ngModel)]=\"type\" id=\"type\" />\n<p>{{type}}</p><p style=\"color:red;\">{{typeE}}</p>\n\n<button (click)=\"submit()\">Submit!</button>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1 id=\"tableLabel\">Angajatii</h1>\n\n<p>This component demonstrates fetching data from the angajats server.</p>\n\n<p *ngIf=\"!angajats\"><em>Loading...</em></p>\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"angajats\">\n    <thead>\n        <tr>\n            <th>Id</th>\n            <th>Nume</th>\n            <th>Data</th>\n            <th>Ora start</th>\n            <th>Ora final</th>\n            <th>Pauza</th>\n            <th>Type</th>\n            <th>Adaugat de</th>\n            \n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let angajat of angajats\">\n            <td>{{ angajat.id }}</td>\n            <td>{{ angajat.nume }}</td>\n            <td>{{ angajat.data }}</td> \n            <td>{{ angajat.ora_start }}</td>\n            <td>{{ angajat.ora_stop }}</td>\n            <td>{{ angajat.pauza }}</td>\n            <td>{{ angajat.adaugatde }}</td>\n            <td>\n                <a class=\"btn btn-primary\" [routerLink]=\"['/fetch-data', costItem.id]\" routerLinkActive=\"active\">Details</a> |\n                <a class=\"btn btn-info\" (click)=\"edit($event,angajat.id)\" >Edit</a> |\n                <a class=\"btn btn-danger\" (click)=\"delete(angajat.id)\">Delete</a>\n            </td>\n        </tr>\n    </tbody>\n</table>\n\n\n<p>Add a new cost </p>\n<p>Description:</p>\n<input [(ngModel)]=\"description\" id=\"description\" />\n<p>{{description}}</p><p style=\"color:red;\">{{descriptionE}}</p>\n\n<p>Sum:</p>\n<input [(ngModel)]=\"sum\" id=\"sum\" />\n<p>{{sum}}</p><p style=\"color:red;\">{{sumE}}</p>\n\n<p>Currency:</p>\n<input [(ngModel)]=\"currency\" id=\"currency\" />\n<p>{{currency}}</p>\n\n<p>Location:</p>\n<input [(ngModel)]=\"location\" id=\"location\" />\n<p>{{location}}</p>\n\n<p>Date:</p>\n<input type=\"date\" [(ngModel)]=\"date\" id=\"date\" />\n<p>{{date}}</p>\n\n<p>Type: </p>\n<input [(ngModel)]=\"type\" id=\"type\" />\n<p>{{type}}</p><p style=\"color:red;\">{{typeE}}</p>\n\n<button (click)=\"submit()\">Submit!</button>\n\n\n");
 
 /***/ }),
 
@@ -203,7 +203,7 @@ AppModule = __decorate([
                     component: _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_9__["FetchDataComponent"],
                 },
                 {
-                    path: 'fetch-data/:costItemId',
+                    path: 'fetch-data/:angajatId',
                     component: _cost_item_details_cost_item_details_component__WEBPACK_IMPORTED_MODULE_10__["CostItemDetailsComponent"],
                 },
                 { path: 'my-route', component: _counter_counter_component__WEBPACK_IMPORTED_MODULE_8__["CounterComponent"] },
@@ -270,21 +270,21 @@ let CostItemDetailsComponent = class CostItemDetailsComponent {
         this.enableEdit = false;
         this.enableEditIndex = null;
     }
-    loadCostItem(costItemId) {
-        this.http.get(this.baseUrl + 'api/costItems/' + costItemId).subscribe(result => {
-            this.costItem = result;
-            console.log(this.costItem);
+    loadCostItem(angajatId) {
+        this.http.get(this.baseUrl + 'api/angajats/' + angajatId).subscribe(result => {
+            this.angajat = result;
+            console.log(this.angajat);
         }, error => console.error(error));
     }
     ngOnInit() {
         this.route.paramMap.subscribe(params => {
-            this.loadCostItem(params.get('costItemId'));
+            this.loadCostItem(params.get('santierId'));
         });
     }
-    edit(costItemId) {
+    edit(santierId) {
         this.enableEdit = true;
-        this.enableEditIndex = costItemId;
-        console.log(costItemId);
+        this.enableEditIndex = santierId;
+        console.log(santierId);
     }
 };
 CostItemDetailsComponent.ctorParameters = () => [
@@ -381,63 +381,48 @@ let FetchDataComponent = class FetchDataComponent {
     constructor(http, baseUrl) {
         this.http = http;
         this.baseUrl = baseUrl;
-        this.description = ' ';
-        this.location = ' ';
-        this.currency = ' ';
-        this.descriptionE = ' ';
-        this.sumE = '';
-        this.typeE = '';
-        this.loadCostItems();
+        this.loadAngajats();
     }
-    loadCostItems() {
-        this.http.get(this.baseUrl + 'api/costItems').subscribe(result => {
-            this.costItems = result;
-            console.log(this.costItems);
+    loadAngajats() {
+        this.http.get(this.baseUrl + 'api/angajats').subscribe(result => {
+            this.angajats = result;
+            console.log(this.angajats);
         }, error => console.error(error));
     }
-    delete(costItemId) {
-        if (confirm('Are you sure you want to delete the cost item with id ' + costItemId + '?')) {
-            this.http.delete(this.baseUrl + 'api/costItems/' + costItemId)
+    delete(angajatId) {
+        if (confirm('Are you sure you want to delete the employee with id ' + angajatId + '?')) {
+            this.http.delete(this.baseUrl + 'api/angajats/' + angajatId)
                 .subscribe(result => {
-                alert('cost Item successfully deleted!');
-                this.loadCostItems();
-            }, error => alert('Cannot delete cost item - maybe it has comments?'));
+                alert('employee successfully deleted!');
+                this.loadAngajats();
+            }, error => alert('Cannot delete employee - maybe it has comments?'));
         }
     }
-    edit(e, costItemId) {
-        var costItem = {};
-        /*
-                costItem.id = Number(costItemId);
-                costItem.description = this.description;
-                costItem.sum = Number(this.sum);
-                costItem.location = this.location;
-                costItem.date = this.date; //new Date;
-                costItem.currency = this.currency;
-                costItem.type = this.type;*/
+    edit(e, angajatId) {
+        var angajat = {};
     }
     submit() {
-        var costItem = {};
-        // costItem.id = 10;
-        costItem.description = this.description;
-        costItem.sum = Number(this.sum);
-        costItem.location = this.location;
-        costItem.date = this.date; //new Date;
-        costItem.currency = this.currency;
-        costItem.type = this.type;
-        this.http.post(this.baseUrl + 'api/costItems', costItem).subscribe(result => {
+        var angajat = {};
+        angajat.nume = this.nume;
+        angajat.data = this.data;
+        angajat.ora_start = this.ora_start;
+        angajat.ora_stop = this.ora_stop; //new Date;
+        angajat.pauza = this.pauza;
+        angajat.adaugatde = this.adaugatde;
+        this.http.post(this.baseUrl + 'api/angajats', angajat).subscribe(result => {
             console.log('success!');
-            this.loadCostItems();
+            this.loadAngajats();
         }, error => {
             if (error.status == 400) {
                 console.log(error.error.errors);
                 if (error.error.errors.Sum != "") {
-                    this.sumE = error.error.errors.Sum[0];
+                    // this.sumE = error.error.errors.Sum[0];
                 }
                 else if (error.error.errors.Description != "") {
-                    this.descriptionE = error.error.errors.Description[0];
+                    // this.descriptionE = error.error.errors.Description[0];
                 }
                 else if (error.error.errors.Type != "") {
-                    this.typeE = error.error.errors.Type[0];
+                    // this.typeE = error.error.errors.Type[0];
                 }
             }
         });
@@ -456,17 +441,6 @@ FetchDataComponent = __decorate([
     __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
 ], FetchDataComponent);
 
-var CostType;
-(function (CostType) {
-    CostType[CostType["food"] = 0] = "food";
-    CostType[CostType["utilities"] = 1] = "utilities";
-    CostType[CostType["transportation"] = 2] = "transportation";
-    CostType[CostType["outing"] = 3] = "outing";
-    CostType[CostType["groceries"] = 4] = "groceries";
-    CostType[CostType["clothes"] = 5] = "clothes";
-    CostType[CostType["electronics"] = 6] = "electronics";
-    CostType[CostType["other"] = 7] = "other";
-})(CostType || (CostType = {}));
 
 
 /***/ }),

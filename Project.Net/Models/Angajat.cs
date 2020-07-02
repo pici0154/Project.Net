@@ -15,11 +15,11 @@ namespace Project.Net.Models
 
         public DateTime Data { get; set; }
 
-        public TimeSpan Ora_Start { get; set; }
+        public DateTime Ora_Start { get; set; }
 
-        public TimeSpan Ora_Stop { get; set; }
+        public DateTime Ora_Stop { get; set; }
 
-        public TimeSpan Pauza { get; set; }
+        public DateTime Pauza { get; set; }
 
         public Utilizator AdaugatDe { get; set; }
 
