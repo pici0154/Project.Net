@@ -37,6 +37,7 @@ namespace Project.Net.Controllers
             //filter by date from - date to 
             IQueryable<Angajat> result = _context.Angajati;
 
+
             if (from != null && to != null)
             {
                 result = result.Where(c => from <= c.Data && c.Data <= to);
