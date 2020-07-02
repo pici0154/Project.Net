@@ -9,7 +9,7 @@ import { TimeInterval } from 'rxjs';
 export class FetchDataComponent {
     public angajats: Angajat[];
 
-    public id: number ;
+    public id_angajat: number ;
     public nume: string;
     public data: Date ;
     public ora_start: Date;
@@ -27,7 +27,8 @@ export class FetchDataComponent {
         this.http.get<Angajat[]>(this.baseUrl + 'api/angajats').subscribe(result => {
             this.angajats = result;
             console.log(this.angajats);
-        }, error => console.error(error));
+        },
+            error => console.error("aici apare eroarea" + error));
     }
 
     delete(angajatId: string) {
@@ -86,7 +87,7 @@ export class FetchDataComponent {
 
 
 interface Angajat {
-    id: number;
+    id_angajat: number;
     nume: string;
     data: Date;
     ora_start: Date;

@@ -39,6 +39,7 @@ export class CostItemDetailsComponent implements OnInit {
     }
 }
 interface AngajatiCuSantiere {
+    id_Angajat: number;
     nume: number;
     data: Date;
     ora_start: Date;

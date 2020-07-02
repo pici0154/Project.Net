@@ -19,48 +19,20 @@
     </thead>
     <tbody>
         <tr *ngFor="let angajat of angajats">
-            <td>{{ angajat.id }}</td>
+            <td>{{ angajat.id_Angajat }}</td>
             <td>{{ angajat.nume }}</td>
             <td>{{ angajat.data }}</td> 
-            <td>{{ angajat.ora_start }}</td>
-            <td>{{ angajat.ora_stop }}</td>
+            <td>{{ angajat.ora_Start }}</td>
+            <td>{{ angajat.ora_Stop }}</td>
             <td>{{ angajat.pauza }}</td>
             <td>{{ angajat.adaugatde }}</td>
             <td>
-                <a class="btn btn-primary" [routerLink]="['/fetch-data', costItem.id]" routerLinkActive="active">Details</a> |
-                <a class="btn btn-info" (click)="edit($event,angajat.id)" >Edit</a> |
-                <a class="btn btn-danger" (click)="delete(angajat.id)">Delete</a>
+                <a class="btn btn-primary" [routerLink]="['/fetch-data', angajat.id_Angajat]" routerLinkActive="active">Details</a> |
+                <a class="btn btn-info" (click)="edit($event,angajat.id_Angajat)" >Edit</a> |
+                <a class="btn btn-danger" (click)="delete(angajat.id_Angajat)">Delete</a>
             </td>
         </tr>
     </tbody>
 </table>
-
-
-<p>Add a new cost </p>
-<p>Description:</p>
-<input [(ngModel)]="description" id="description" />
-<p>{{description}}</p><p style="color:red;">{{descriptionE}}</p>
-
-<p>Sum:</p>
-<input [(ngModel)]="sum" id="sum" />
-<p>{{sum}}</p><p style="color:red;">{{sumE}}</p>
-
-<p>Currency:</p>
-<input [(ngModel)]="currency" id="currency" />
-<p>{{currency}}</p>
-
-<p>Location:</p>
-<input [(ngModel)]="location" id="location" />
-<p>{{location}}</p>
-
-<p>Date:</p>
-<input type="date" [(ngModel)]="date" id="date" />
-<p>{{date}}</p>
-
-<p>Type: </p>
-<input [(ngModel)]="type" id="type" />
-<p>{{type}}</p><p style="color:red;">{{typeE}}</p>
-
-<button (click)="submit()">Submit!</button>
 
 
