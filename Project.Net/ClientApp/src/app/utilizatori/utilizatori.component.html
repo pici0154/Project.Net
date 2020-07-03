@@ -25,12 +25,30 @@
             <td>{{ utilizator.user }}</td>
             <td>{{ utilizator.parola }}</td>
             <td>
-                <a class="btn btn-primary" [routerLink]="['/santier-details', utilizator.id]" routerLinkActive="active">Details</a> |
-                <a class="btn btn-info" (click)="edit($event,utilizator.id)">Edit</a> |
-                <a class="btn btn-danger" (click)="delete(utilizator.id)">Delete</a>
+                <a (click)="edit($event,utilizator.id)">Edit</a> |
+                <a (click)="delete(utilizator.id)">Delete</a>
             </td>
         </tr>
     </tbody>
 </table>
+
+<p>Adauga un utilizator nou</p>
+<p>Nume:</p>
+<input [(ngModel)]="create_nume" />
+<p>{{create_nume}}</p><p style="color:red;">{{create_locatieError}}</p>
+
+<p>Prenume:</p>
+<input [(ngModel)]="create_prenume" />
+<p>{{create_prenume}}</p><p style="color:red;">{{create_numesantierError}}</p>
+
+<p>Utilizator:</p>
+<input [(ngModel)]="create_user" />
+<p>{{create_user}}</p><p style="color:red;">{{create_numesantierError}}</p>
+
+<p>Parola:</p>
+<input [(ngModel)]="create_parola" />
+<p>{{create_parola}}</p><p style="color:red;">{{create_numesantierError}}</p>
+
+<button (click)="submit()">Adauga</button>
 
 

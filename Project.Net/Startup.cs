@@ -1,16 +1,21 @@
-using System;
-using System.Reflection;
-using System.Text.Json.Serialization;
 using FluentValidation.AspNetCore;
-using Project.Net.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Project.Net.Models;
+using System;
 using System.IO;
+using System.Reflection;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Project.Net
 {
@@ -27,8 +32,23 @@ namespace Project.Net
         public void ConfigureServices(IServiceCollection services)
         {
 
-             // configure DI (Dependency Injection) for application services
-          //  services.AddScoped<IUserService, UserService>();
+            //start autentificare +
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                   .AddJwtBearer(options =>
+                   {
+                       options.TokenValidationParameters = new TokenValidationParameters
+                       {
+                           ValidateIssuer = true,
+                           ValidateAudience = true,
+                           ValidateLifetime = true,
+                           ValidateIssuerSigningKey = true,
+                           ValidIssuer = Configuration.GetValue<string>("Authentication:Issuer"),
+                           ValidAudience = Configuration.GetValue<string>("Authentication:Issuer"),
+                           IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetValue<string>("Authentication:Secret"))),
+                           ClockSkew = TimeSpan.Zero
+                       };
+                   });
+            //end autentificare +
 
 
             services
@@ -44,15 +64,28 @@ namespace Project.Net
 
             services.AddDbContext<AngajatDBContext>(opt => // opt.UseInMemoryDatabase("TodoList"));
             opt.UseSqlServer(Configuration.GetConnectionString("AngajatDbConnectionString")));
-           
-            
+
+            services
+        .AddMvc(options =>
+        {
+            AuthorizationPolicy policy = new AuthorizationPolicyBuilder(JwtBearerDefaults.AuthenticationScheme).RequireAuthenticatedUser().Build();
+
+            options.Filters.Add(new Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter(policy));
+
+            options.EnableEndpointRouting = false;
+        });
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                    .AddDefaultTokenProviders()
+                    .AddEntityFrameworkStores<AngajatDBContext>();
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "My Costs API",
-                    Description = "A simple example ASP.NET Core Web API",
+                    Title = "Gestionarea angajatilor",
+                    Description = "Aplicatie ASP.NET Core Web API pentru gestionarea angajatilor",
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
@@ -99,16 +132,22 @@ namespace Project.Net
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
-            app.UseAuthorization();
-
             app.UseSpaStaticFiles();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller}/{action=Index}/{id?}");
             });
 
             app.UseSpa(spa =>

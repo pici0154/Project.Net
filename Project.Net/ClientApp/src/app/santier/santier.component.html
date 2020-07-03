@@ -1,7 +1,7 @@
 <h1 id="tableLabel">Santiere</h1>
 
 <p>Locatie: </p>
-<input [(ngModel)]="fl_locatie"/> 
+<input [(ngModel)]="fl_locatie" />
 
 <a class="btn btn-primary" (click)="loadSantierFilterBy()">Filtreaza!</a>
 
@@ -31,4 +31,13 @@
     </tbody>
 </table>
 
+<p>Adauga un nou santier</p>
+<p>Locatie:</p>
+<input [(ngModel)]="create_locatie"  />
+<p>{{create_locatie}}</p><p style="color:red;">{{create_locatieError}}</p>
 
+<p>Denumire santier:</p>
+<input [(ngModel)]="create_numesantier" />
+<p>{{create_numesantier}}</p><p style="color:red;">{{create_numesantierError}}</p>
+
+<button (click)="submit()">Adauga</button>

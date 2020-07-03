@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Project.Net.Models;
+using Project.Net.Helpers;
+using Project.Net.Models; 
 
 namespace Project.Net.Controllers
 {
@@ -107,7 +108,10 @@ namespace Project.Net.Controllers
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
         public async Task<ActionResult<Utilizator>> PostUtilizator(Utilizator utilizator)
-        {
+        { 
+            //criptare parola
+            utilizator.Parola = HashUtils.GetHashString(utilizator.Parola);
+
             _context.Utilizatori.Add(utilizator);
             await _context.SaveChangesAsync();
 

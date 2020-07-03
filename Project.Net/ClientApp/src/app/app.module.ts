@@ -4,14 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { AngularMaterialModule } from './shared/angular-material.module';
+
+import { CoreModule } from './core/core.module'
+
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { SantierComponent } from './santier/santier.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-//import { AngajatiDetailsComponent } from './angajati-details/angajati-details.component';
 import { SantierDetailsComponent } from './santier-details/santier-details.component';
 import { UtilizatoriComponent } from './utilizatori/utilizatori.component'; 
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
     declarations: [
@@ -20,9 +28,10 @@ import { UtilizatoriComponent } from './utilizatori/utilizatori.component';
         HomeComponent,
         SantierComponent,
         FetchDataComponent,
-      //  AngajatiDetailsComponent,
         SantierDetailsComponent,
-      UtilizatoriComponent, 
+        UtilizatoriComponent,
+        LoginComponent,
+        RegistrationComponent
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -50,10 +59,16 @@ import { UtilizatoriComponent } from './utilizatori/utilizatori.component';
             {
                 path: 'utilizatori',
                 component: UtilizatoriComponent,
-           }
+            },
+            { path: 'login', component: LoginComponent },
+            { path: 'register', component: RegistrationComponent }
             
-        ])
+        ]),
+        AngularMaterialModule,
+        CoreModule,
+        BrowserAnimationsModule,
     ],
+    exports: [AngularMaterialModule, CoreModule],
     providers: [],
     bootstrap: [AppComponent]
 })

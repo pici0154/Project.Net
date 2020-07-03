@@ -24,7 +24,7 @@
             <th>Ora start</th>
             <th>Ora final</th>
             <th>Pauza</th>
-            <th>Adaugat de</th>
+            <th>Operatii</th>
 
         </tr>
     </thead>
@@ -36,8 +36,11 @@
             <td>{{ angajat.ora_Start | date:'HH:mm' }}</td>
             <td>{{ angajat.ora_Stop | date:'HH:mm'}}</td>
             <td>{{ angajat.pauza | date:'HH:mm' }}</td>
-            <td>{{ angajat.adaugatde }}</td>
-
+            <td>
+                <a class="btn btn-primary" [routerLink]="['/santier-details', santier.id_Santier]" routerLinkActive="active">Details</a> |
+                <a class="btn btn-info" (click)="edit($event,santier.id_Santier)">Edit</a> |
+                <a class="btn btn-danger" (click)="delete(santier.id_Santier)">Delete</a>
+            </td>
         </tr>
     </tbody>
 </table>

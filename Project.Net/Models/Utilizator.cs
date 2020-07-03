@@ -15,7 +15,6 @@ namespace Project.Net.Models
         public string Prenume { get; set; }
         public string User{ get; set; }
 
-        [JsonIgnore]
-        public string Parola { get; set; }
+       public string Parola { get; set; }
     }
 }

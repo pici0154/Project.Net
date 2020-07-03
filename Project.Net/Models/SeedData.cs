@@ -15,17 +15,17 @@ namespace Project.Net.Models
         {
             using (var context = new AngajatDBContext(serviceProvider.GetRequiredService<DbContextOptions<AngajatDBContext>>()))
             {
-                if (!context.Utilizatori.Any())
-                {
-                    context.Utilizatori.Add(new Utilizator
-                    {
-                        Nume = "First",
-                        Prenume = "Last",
-                        User = "FirstUsername",
-                        Parola = "parolasigura" // HashUtils.GetHashString("parolasigura")
-                    });
-                    context.SaveChanges();
-                }
+                //if (!context.Utilizatori.Any())
+                //{
+                //    context.Utilizatori.Add(new Utilizator
+                //    {
+                //        Nume = "First",
+                //        Prenume = "Last",
+                //        User = "FirstUsername",
+                //        Parola = "parolasigura" // HashUtils.GetHashString("parolasigura")
+                //    });
+                //    context.SaveChanges();
+                //}
 
                 // Look for any flowers.
                 if (context.Angajati.Any())

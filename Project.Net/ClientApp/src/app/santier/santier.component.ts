@@ -10,12 +10,16 @@ export class SantierComponent {
     public santiere: Santier[];  
 
     public Id_Santier: number;
-    public nume: string;
+    public nume_Santier: string;
     public locatie: string;
     public nr_angajati: number; 
 
     //filtru dupa locatie
     public fl_locatie: string;
+
+    //create
+    public create_locatie: string = ' ';
+    public create_numesantier: string = ' ';
 
     constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
         this.loadSanteire();
@@ -67,8 +71,8 @@ export class SantierComponent {
 
         var santier: Santier = <Santier>{};
 
-        santier.nume = this.nume;
-        santier.locatie = this.locatie; 
+        santier.locatie = this.create_locatie;
+        santier.nume_Santier = this.create_numesantier; 
         
 
         this.http.post(this.baseUrl + 'api/santiers', santier).subscribe(result => {
@@ -98,7 +102,7 @@ export class SantierComponent {
 interface Santier {
     Id_Santier: number;
     locatie: string;
-    nume: string;
+    nume_Santier: string;
     nr_angajati: number;
 
 }

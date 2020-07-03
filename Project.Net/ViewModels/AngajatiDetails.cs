@@ -20,11 +20,10 @@ namespace Project.Net.ViewModels
         public DateTime Pauza { get; set; }
         public long Ore_Lucrate { get; set; }
 
-        public Utilizator AdaugatDe { get; set; }
-
         public Santier Santier { get; set; }
-
-
+        public Utilizator AdaugatDe { get; set; }
+       
+      
 
         public static AngajatiDetails FromAngajat(Angajat angajat) => new AngajatiDetails
         {
@@ -36,7 +35,7 @@ namespace Project.Net.ViewModels
             Pauza = angajat.Pauza,
             Ore_Lucrate = angajat.Ore_Lucrate,
             AdaugatDe = angajat.AdaugatDe,
-            //Santier = angajat.Santier,
+            
             //   Santiere = angajat.Santier.Select(c => SantierePentruAngajati.FromSantier(c)).ToList()
         };
 

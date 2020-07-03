@@ -15,8 +15,8 @@ namespace Project.Net.ModelValidators
 								.MinimumLength(4)
 								.WithMessage("Utilizatorul nu poate fi gol!");
 
-			RuleFor(x => x.Parola).NotEmpty()
-								.MinimumLength(5)
+			RuleFor(x => x.Parola)
+								.MinimumLength(4)
 								.WithMessage("Parola trebuie sa aiba mai mult de 5 caractere!");
 
 
