@@ -37,9 +37,8 @@
             <td>{{ angajat.ora_Stop | date:'HH:mm'}}</td>
             <td>{{ angajat.pauza | date:'HH:mm' }}</td>
             <td>
-                <a class="btn btn-primary" [routerLink]="['/santier-details', santier.id_Santier]" routerLinkActive="active">Details</a> |
-                <a class="btn btn-info" (click)="edit($event,santier.id_Santier)">Edit</a> |
-                <a class="btn btn-danger" (click)="delete(santier.id_Santier)">Delete</a>
+                <a href="edit($event angajat.id_Angajat)">Edit</a> |
+                <a href="delete( angajat.id_Angajat )">Delete</a>
             </td>
         </tr>
     </tbody>

@@ -99,7 +99,7 @@ export class FetchDataComponent {
         angajat.ora_start = this.ora_start;
         angajat.ora_stop = this.ora_stop; //new Date;
         angajat.pauza = this.pauza; 
-        angajat.adaugatde = this.adaugatde;
+      //  angajat.adaugatde = this.adaugatde;
 
         this.http.post(this.baseUrl + 'api/angajats', angajat).subscribe(result => {
             console.log('success!');
@@ -133,5 +133,5 @@ interface Angajat {
     ora_start: Date;
     ora_stop: Date;
     pauza: Date;
-    adaugatde: string;
+  //  adaugatde: string;
 }
