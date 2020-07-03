@@ -1,12 +1,17 @@
 <h1 id="tableLabel">Santiere</h1>
 
+<p>Locatie: </p>
+<input [(ngModel)]="fl_locatie"/> 
+
+<a class="btn btn-primary" (click)="loadSantierFilterBy()">Filtreaza!</a>
+
 <p *ngIf="!santiere"><em>Loading...</em></p>
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="santiere">
     <thead>
         <tr>
             <th>Id</th>
-            <th>Nume</th>
             <th>Locatie</th>
+            <th>Denumire santier</th>
             <th>Numar de angajati</th>
 
         </tr>
@@ -16,7 +21,7 @@
             <td>{{ santier.id_Santier }}</td>
             <td>{{ santier.locatie }}</td>
             <td>{{ santier.nume_Santier }}</td>
-            <td>{{ santier.nr_angajati }}</td>  
+            <td>{{ santier.nr_angajati }}</td>
             <td>
                 <a class="btn btn-primary" [routerLink]="['/santier-details', santier.id_Santier]" routerLinkActive="active">Details</a> |
                 <a class="btn btn-info" (click)="edit($event,santier.id_Santier)">Edit</a> |

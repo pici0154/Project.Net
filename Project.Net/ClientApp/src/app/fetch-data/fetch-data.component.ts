@@ -17,6 +17,12 @@ export class FetchDataComponent {
     public pauza: Date;
     public adaugatde: string;
 
+    //parametrii de filtrare
+    public data_start: Date;
+    public data_stop: Date;
+    public data_startError: string;
+    public data_stopError: string;
+
 
     constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
         this.loadAngajats();
@@ -30,6 +36,40 @@ export class FetchDataComponent {
         },
             error => console.error( error));
     }
+
+    loadAngajatFilterBy() {
+        if ((this.data_start > this.data_stop) && (this.data_stop != null)) {
+            this.data_startError = "Data de inceput trebuie sa fie mai mica ca data de final!";
+        }
+        else if ((this.data_start != null) && (this.data_stop != null)) {
+            this.http.get<Angajat[]>(this.baseUrl + 'api/angajats' + '?from=' + this.data_start + '&to=' + this.data_stop)
+                .subscribe(result => {
+                    this.angajats = result;
+                    console.log(this.angajats);
+                },
+                    error => console.error(error));
+        }
+        else if ((this.data_start != null) && (this.data_stop == null)) {
+            this.http.get<Angajat[]>(this.baseUrl + 'api/angajats' + '?from=' + this.data_start)
+                .subscribe(result => {
+                    this.angajats = result;
+                    console.log(this.angajats);
+                },
+                    error => console.error(error));
+        }
+        else if ((this.data_start == null) && (this.data_stop != null)) {
+            this.http.get<Angajat[]>(this.baseUrl + 'api/angajats' + '?to=' + this.data_stop)
+                .subscribe(result => {
+                    this.angajats = result;
+                    console.log(this.angajats);
+                },
+                    error => console.error(error));   
+        }
+
+
+         
+    }
+
 
     delete(angajatId: string) {
         if (confirm('Are you sure you want to delete the employee with id ' + angajatId + '?')) {

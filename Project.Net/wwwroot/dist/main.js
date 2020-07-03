@@ -1,18 +1,5 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/angajati-details/angajati-details.component.html":
-/*!********************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/angajati-details/angajati-details.component.html ***!
-  \********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n\n<p *ngIf=\"!angajat\"><em>Loading...</em></p>\n\n<a [routerLink]=\"['/fetch-data']\" routerLinkActive=\"active\">Back</a>\n\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"angajat\">\n    <tbody>\n        <td>{{ angajat.id_Angajat }}</td>\n        <td>{{ angajat.nume }}</td>\n        </tbody>\n</table>\n");
-
-/***/ }),
-
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html":
 /*!**************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
@@ -35,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1 id=\"tableLabel\">Angajati</h1>\n\n<p *ngIf=\"!angajats\"><em>Loading...</em></p>\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"angajats\">\n    <thead>\n        <tr>\n            <th>Id</th>\n            <th>Nume</th>\n            <th>Data</th>\n            <th>Ora start</th>\n            <th>Ora final</th>\n            <th>Pauza</th>\n            <th>Adaugat de</th>\n            \n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let angajat of angajats\">\n            <td>{{ angajat.id_Angajat }}</td>\n            <td>{{ angajat.nume }}</td>\n            <td>{{ angajat.data | date:'yyyy/MM/dd' }}</td> \n            <td>{{ angajat.ora_Start | date:'HH:mm' }}</td>\n            <td>{{ angajat.ora_Stop | date:'HH:mm'}}</td>\n            <td>{{ angajat.pauza | date:'HH:mm' }}</td>\n            <td>{{ angajat.adaugatde }}</td>\n           \n        </tr>\n    </tbody>\n</table>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1 id=\"tableLabel\">Angajati</h1>\n\n\n<p>Filtrare dupa data</p>\n\n<p>Date start:</p>\n<input type=\"date\" [(ngModel)]=\"data_start\" id=\"date\" />\n<p>{{data_start}} </p> <p style=\"color:red;\"> {{data_startError}}</p>\n\n<p>Data final: </p>\n<input type=\"date\" [(ngModel)]=\"data_stop\" id=\"type\" />\n<p>{{data_stop}}</p><p style=\"color:red;\"> {{data_stopError}} </p>\n\n<a class=\"btn btn-primary\" (click)=\"loadAngajatFilterBy()\"  >Filtreaza!</a>\n\n<p *ngIf=\"!angajats\"><em>Loading...</em></p>\n\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"angajats\">\n    <thead>\n        <tr>\n            <th>Id</th>\n            <th>Nume</th>\n            <th>Data</th>\n            <th>Ora start</th>\n            <th>Ora final</th>\n            <th>Pauza</th>\n            <th>Adaugat de</th>\n\n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let angajat of angajats\">\n            <td>{{ angajat.id_Angajat }}</td>\n            <td>{{ angajat.nume }}</td>\n            <td>{{ angajat.data | date:'yyyy/MM/dd' }}</td>\n            <td>{{ angajat.ora_Start | date:'HH:mm' }}</td>\n            <td>{{ angajat.ora_Stop | date:'HH:mm'}}</td>\n            <td>{{ angajat.pauza | date:'HH:mm' }}</td>\n            <td>{{ angajat.adaugatde }}</td>\n\n        </tr>\n    </tbody>\n</table>\n\n\n");
 
 /***/ }),
 
@@ -48,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hello, world!</h1>\n<p>Welcome to your new single-page application, built with:</p>\n<ul>\n  <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>\n  <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>\n  <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>\n</ul>\n<p>To help you get started, we've also set up:</p>\n<ul>\n  <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>\n  <li><strong>Angular CLI integration</strong>. In development mode, there's no need to run <code>ng serve</code>. It runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>\n  <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>\n</ul>\n<p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into it.</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Gestionarea afacerii</h1>\n\n<img src=\"https://realestatemagazine.ro/wp-content/uploads/2020/01/santier.jpg\"\n     alt=\"imaginea nu a fost gasita\"\n     width=\"1150\" height=\"600\"/>\n");
 
 /***/ }),
 
@@ -61,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header>\n    <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3\">\n        <div class=\"container\">\n            <a class=\"navbar-brand\" [routerLink]=\"['/']\">NetCoreAngularApp2</a>\n            <button class=\"navbar-toggler\"\n                    type=\"button\"\n                    data-toggle=\"collapse\"\n                    data-target=\".navbar-collapse\"\n                    aria-label=\"Toggle navigation\"\n                    [attr.aria-expanded]=\"isExpanded\"\n                    (click)=\"toggle()\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            <div class=\"navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse\"\n                 [ngClass]=\"{ show: isExpanded }\">\n                <ul class=\"navbar-nav flex-grow\">\n\n                    <li class=\"nav-item\"\n                        [routerLinkActive]=\"['link-active']\"\n                        [routerLinkActiveOptions]=\"{ exact: true }\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/']\">Home</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/santier']\">Santiere</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/fetch-data']\">Fetch data- Lista angajati</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/my-route']\">My route</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </nav>\n</header>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header>\n    <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3\">\n        <div class=\"container\">\n            <a class=\"navbar-brand\" [routerLink]=\"['/']\"> </a>\n            <button class=\"navbar-toggler\"\n                    type=\"button\"\n                    data-toggle=\"collapse\"\n                    data-target=\".navbar-collapse\"\n                    aria-label=\"Toggle navigation\"\n                    [attr.aria-expanded]=\"isExpanded\"\n                    (click)=\"toggle()\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            <div class=\"navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse\"\n                 [ngClass]=\"{ show: isExpanded }\">\n                <ul class=\"navbar-nav flex-grow\">\n\n                    <li class=\"nav-item\"\n                        [routerLinkActive]=\"['link-active']\"\n                        [routerLinkActiveOptions]=\"{ exact: true }\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/']\">Home</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/santier']\">Santiere</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/fetch-data']\"> Lista angajati</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/utilizatori']\"> Lista utilizatori</a>\n                    </li>\n\n                     \n                </ul>\n            </div>\n        </div>\n    </nav>\n</header>\n");
 
 /***/ }),
 
@@ -87,7 +74,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1 id=\"tableLabel\">Santiere</h1>\n\n<p *ngIf=\"!santiere\"><em>Loading...</em></p>\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"santiere\">\n    <thead>\n        <tr>\n            <th>Id</th>\n            <th>Nume</th>\n            <th>Locatie</th>\n            <th>Numar de angajati</th>\n\n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let santier of santiere\">\n            <td>{{ santier.id_Santier }}</td>\n            <td>{{ santier.locatie }}</td>\n            <td>{{ santier.nume_Santier }}</td>\n            <td>{{ santier.nr_angajati }}</td>  \n            <td>\n                <a class=\"btn btn-primary\" [routerLink]=\"['/santier-details', santier.id_Santier]\" routerLinkActive=\"active\">Details</a> |\n                <a class=\"btn btn-info\" (click)=\"edit($event,santier.id_Santier)\">Edit</a> |\n                <a class=\"btn btn-danger\" (click)=\"delete(santier.id_Santier)\">Delete</a>\n            </td>\n        </tr>\n    </tbody>\n</table>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1 id=\"tableLabel\">Santiere</h1>\n\n<p>Locatie: </p>\n<input [(ngModel)]=\"fl_locatie\"/> \n\n<a class=\"btn btn-primary\" (click)=\"loadSantierFilterBy()\">Filtreaza!</a>\n\n<p *ngIf=\"!santiere\"><em>Loading...</em></p>\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"santiere\">\n    <thead>\n        <tr>\n            <th>Id</th>\n            <th>Locatie</th>\n            <th>Denumire santier</th>\n            <th>Numar de angajati</th>\n\n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let santier of santiere\">\n            <td>{{ santier.id_Santier }}</td>\n            <td>{{ santier.locatie }}</td>\n            <td>{{ santier.nume_Santier }}</td>\n            <td>{{ santier.nr_angajati }}</td>\n            <td>\n                <a class=\"btn btn-primary\" [routerLink]=\"['/santier-details', santier.id_Santier]\" routerLinkActive=\"active\">Details</a> |\n                <a class=\"btn btn-info\" (click)=\"edit($event,santier.id_Santier)\">Edit</a> |\n                <a class=\"btn btn-danger\" (click)=\"delete(santier.id_Santier)\">Delete</a>\n            </td>\n        </tr>\n    </tbody>\n</table>\n\n\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/utilizatori/utilizatori.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/utilizatori/utilizatori.component.html ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<h1 id=\"tableLabel\">Utilizatori</h1>\n\n<p>Prenume: </p>\n<input [(ngModel)]=\"fl_prenume\" />\n\n<a class=\"btn btn-primary\" (click)=\"loadUtilizatorsFilterBy()\">Filtreaza!</a>\n\n<p *ngIf=\"!utilizators\"><em>Loading...</em></p>\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"utilizators\">\n    <thead>\n        <tr>\n            <th>Id</th>\n            <th>Nume</th>\n            <th>Prenume</th>\n            <th>User</th>\n            <th>Parola</th>\n\n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let utilizator of utilizators\">\n            <td>{{ utilizator.id }}</td>\n            <td>{{ utilizator.nume }}</td>\n            <td>{{ utilizator.prenume }}</td>\n            <td>{{ utilizator.user }}</td>\n            <td>{{ utilizator.parola }}</td>\n            <td>\n                <a class=\"btn btn-primary\" [routerLink]=\"['/santier-details', utilizator.id]\" routerLinkActive=\"active\">Details</a> |\n                <a class=\"btn btn-info\" (click)=\"edit($event,utilizator.id)\">Edit</a> |\n                <a class=\"btn btn-danger\" (click)=\"delete(utilizator.id)\">Delete</a>\n            </td>\n        </tr>\n    </tbody>\n</table>\n\n\n");
 
 /***/ }),
 
@@ -111,94 +111,6 @@ webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
 webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
-
-/***/ }),
-
-/***/ "./src/app/angajati-details/angajati-details.component.css":
-/*!*****************************************************************!*\
-  !*** ./src/app/angajati-details/angajati-details.component.css ***!
-  \*****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FuZ2FqYXRpLWRldGFpbHMvYW5nYWphdGktZGV0YWlscy5jb21wb25lbnQuY3NzIn0= */");
-
-/***/ }),
-
-/***/ "./src/app/angajati-details/angajati-details.component.ts":
-/*!****************************************************************!*\
-  !*** ./src/app/angajati-details/angajati-details.component.ts ***!
-  \****************************************************************/
-/*! exports provided: AngajatiDetailsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AngajatiDetailsComponent", function() { return AngajatiDetailsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
-  return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-
-
-
-let AngajatiDetailsComponent = class AngajatiDetailsComponent {
-    constructor(http, baseUrl, route) {
-        this.http = http;
-        this.baseUrl = baseUrl;
-        this.route = route;
-        this.enableEdit = false;
-        this.enableEditIndex = null;
-    }
-    loadCostItem(angajatId) {
-        this.http.get(this.baseUrl + 'api/angajats/' + angajatId).subscribe(result => {
-            this.angajat = result;
-            console.log(this.angajat);
-        }, error => console.error(error));
-    }
-    ngOnInit() {
-        this.route.paramMap.subscribe(params => {
-            this.loadCostItem(params.get('santierId'));
-        });
-    }
-    edit(santierId) {
-        this.enableEdit = true;
-        this.enableEditIndex = santierId;
-        console.log(santierId);
-    }
-};
-AngajatiDetailsComponent.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
-    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }
-];
-AngajatiDetailsComponent = __decorate([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-        selector: 'app-cost-item-details',
-        template: __importDefault(__webpack_require__(/*! raw-loader!./angajati-details.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/angajati-details/angajati-details.component.html")).default,
-        styles: [__importDefault(__webpack_require__(/*! ./angajati-details.component.css */ "./src/app/angajati-details/angajati-details.component.css")).default]
-    }),
-    __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
-    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String, _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
-], AngajatiDetailsComponent);
-
-
 
 /***/ }),
 
@@ -259,8 +171,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _santier_santier_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./santier/santier.component */ "./src/app/santier/santier.component.ts");
 /* harmony import */ var _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./fetch-data/fetch-data.component */ "./src/app/fetch-data/fetch-data.component.ts");
-/* harmony import */ var _angajati_details_angajati_details_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./angajati-details/angajati-details.component */ "./src/app/angajati-details/angajati-details.component.ts");
-/* harmony import */ var _santier_details_santier_details_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./santier-details/santier-details.component */ "./src/app/santier-details/santier-details.component.ts");
+/* harmony import */ var _santier_details_santier_details_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./santier-details/santier-details.component */ "./src/app/santier-details/santier-details.component.ts");
+/* harmony import */ var _utilizatori_utilizatori_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./utilizatori/utilizatori.component */ "./src/app/utilizatori/utilizatori.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -280,6 +192,7 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
+//import { AngajatiDetailsComponent } from './angajati-details/angajati-details.component';
 
 
 let AppModule = class AppModule {
@@ -292,28 +205,35 @@ AppModule = __decorate([
             _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"],
             _santier_santier_component__WEBPACK_IMPORTED_MODULE_8__["SantierComponent"],
             _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_9__["FetchDataComponent"],
-            _angajati_details_angajati_details_component__WEBPACK_IMPORTED_MODULE_10__["AngajatiDetailsComponent"],
-            _santier_details_santier_details_component__WEBPACK_IMPORTED_MODULE_11__["SantierDetailsComponent"],
+            //  AngajatiDetailsComponent,
+            _santier_details_santier_details_component__WEBPACK_IMPORTED_MODULE_10__["SantierDetailsComponent"],
+            _utilizatori_utilizatori_component__WEBPACK_IMPORTED_MODULE_11__["UtilizatoriComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"].withServerTransition({ appId: 'ng-cli-universal' }),
             _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot([
-                { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"], pathMatch: 'full' },
-                { path: 'santier', component: _santier_santier_component__WEBPACK_IMPORTED_MODULE_8__["SantierComponent"] },
+                {
+                    path: '',
+                    component: _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"], pathMatch: 'full'
+                },
+                {
+                    path: 'santier',
+                    component: _santier_santier_component__WEBPACK_IMPORTED_MODULE_8__["SantierComponent"]
+                },
                 {
                     path: 'santier-details/:id_Santier',
-                    component: _santier_details_santier_details_component__WEBPACK_IMPORTED_MODULE_11__["SantierDetailsComponent"]
+                    component: _santier_details_santier_details_component__WEBPACK_IMPORTED_MODULE_10__["SantierDetailsComponent"]
                 },
                 {
                     path: 'fetch-data',
                     component: _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_9__["FetchDataComponent"],
                 },
                 {
-                    path: 'fetch-data/:id_Angajat',
-                    component: _angajati_details_angajati_details_component__WEBPACK_IMPORTED_MODULE_10__["AngajatiDetailsComponent"],
-                },
+                    path: 'utilizatori',
+                    component: _utilizatori_utilizatori_component__WEBPACK_IMPORTED_MODULE_11__["UtilizatoriComponent"],
+                }
             ])
         ],
         providers: [],
@@ -365,6 +285,32 @@ let FetchDataComponent = class FetchDataComponent {
             this.angajats = result;
             console.log(this.angajats);
         }, error => console.error(error));
+    }
+    loadAngajatFilterBy() {
+        if ((this.data_start > this.data_stop) && (this.data_stop != null)) {
+            this.data_startError = "Data de inceput trebuie sa fie mai mica ca data de final!";
+        }
+        else if ((this.data_start != null) && (this.data_stop != null)) {
+            this.http.get(this.baseUrl + 'api/angajats' + '?from=' + this.data_start + '&to=' + this.data_stop)
+                .subscribe(result => {
+                this.angajats = result;
+                console.log(this.angajats);
+            }, error => console.error(error));
+        }
+        else if ((this.data_start != null) && (this.data_stop == null)) {
+            this.http.get(this.baseUrl + 'api/angajats' + '?from=' + this.data_start)
+                .subscribe(result => {
+                this.angajats = result;
+                console.log(this.angajats);
+            }, error => console.error(error));
+        }
+        else if ((this.data_start == null) && (this.data_stop != null)) {
+            this.http.get(this.baseUrl + 'api/angajats' + '?to=' + this.data_stop)
+                .subscribe(result => {
+                this.angajats = result;
+                console.log(this.angajats);
+            }, error => console.error(error));
+        }
     }
     delete(angajatId) {
         if (confirm('Are you sure you want to delete the employee with id ' + angajatId + '?')) {
@@ -635,6 +581,20 @@ let SantierComponent = class SantierComponent {
             console.log(this.santiere);
         }, error => console.error(error));
     }
+    loadSantierFilterBy() {
+        if (this.fl_locatie != null) {
+            this.http.get(this.baseUrl + 'api/santiers' + '?locatie=' + this.fl_locatie).subscribe(result => {
+                this.santiere = result;
+                console.log(this.santiere);
+            }, error => console.error(error));
+        }
+        else {
+            this.http.get(this.baseUrl + 'api/santiers').subscribe(result => {
+                this.santiere = result;
+                console.log(this.santiere);
+            }, error => console.error(error));
+        }
+    }
     delete(santierId) {
         if (confirm('Are you sure you want to delete the santier with id ' + santierId + '?')) {
             this.http.delete(this.baseUrl + 'api/santiers/' + santierId)
@@ -679,6 +639,94 @@ SantierComponent = __decorate([
     __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
     __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
 ], SantierComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/utilizatori/utilizatori.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/utilizatori/utilizatori.component.css ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3V0aWxpemF0b3JpL3V0aWxpemF0b3JpLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/utilizatori/utilizatori.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/utilizatori/utilizatori.component.ts ***!
+  \******************************************************/
+/*! exports provided: UtilizatoriComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UtilizatoriComponent", function() { return UtilizatoriComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+let UtilizatoriComponent = class UtilizatoriComponent {
+    constructor(http, baseUrl) {
+        this.http = http;
+        this.baseUrl = baseUrl;
+        this.loadUtilizators();
+    }
+    loadUtilizators() {
+        this.http.get(this.baseUrl + 'api/utilizators').subscribe(result => {
+            this.utilizators = result;
+            console.log(this.utilizators);
+        }, error => console.error(error));
+    }
+    loadUtilizatorsFilterBy() {
+        this.http.get(this.baseUrl + 'api/utilizators' + '?prenume=' + this.fl_prenume).subscribe(result => {
+            this.utilizators = result;
+            console.log(this.utilizators);
+        }, error => console.error(error));
+    }
+    delete(utilizatorId) {
+        if (confirm('Are you sure you want to delete the employee with id ' + utilizatorId + '?')) {
+            this.http.delete(this.baseUrl + 'api/utilizators/' + utilizatorId)
+                .subscribe(result => {
+                alert('employee successfully deleted!');
+                this.loadUtilizators();
+            }, error => alert('Cannot delete employee - maybe it has comments?'));
+        }
+    }
+};
+UtilizatoriComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] }
+];
+UtilizatoriComponent = __decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        selector: 'app-utilizatori',
+        template: __importDefault(__webpack_require__(/*! raw-loader!./utilizatori.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/utilizatori/utilizatori.component.html")).default,
+        styles: [__importDefault(__webpack_require__(/*! ./utilizatori.component.css */ "./src/app/utilizatori/utilizatori.component.css")).default]
+    }),
+    __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
+    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
+], UtilizatoriComponent);
 
 
 

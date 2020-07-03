@@ -1,6 +1,20 @@
 <h1 id="tableLabel">Angajati</h1>
 
+
+<p>Filtrare dupa data</p>
+
+<p>Date start:</p>
+<input type="date" [(ngModel)]="data_start" id="date" />
+<p>{{data_start}} </p> <p style="color:red;"> {{data_startError}}</p>
+
+<p>Data final: </p>
+<input type="date" [(ngModel)]="data_stop" id="type" />
+<p>{{data_stop}}</p><p style="color:red;"> {{data_stopError}} </p>
+
+<a class="btn btn-primary" (click)="loadAngajatFilterBy()"  >Filtreaza!</a>
+
 <p *ngIf="!angajats"><em>Loading...</em></p>
+
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="angajats">
     <thead>
         <tr>
@@ -11,19 +25,19 @@
             <th>Ora final</th>
             <th>Pauza</th>
             <th>Adaugat de</th>
-            
+
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let angajat of angajats">
             <td>{{ angajat.id_Angajat }}</td>
             <td>{{ angajat.nume }}</td>
-            <td>{{ angajat.data | date:'yyyy/MM/dd' }}</td> 
+            <td>{{ angajat.data | date:'yyyy/MM/dd' }}</td>
             <td>{{ angajat.ora_Start | date:'HH:mm' }}</td>
             <td>{{ angajat.ora_Stop | date:'HH:mm'}}</td>
             <td>{{ angajat.pauza | date:'HH:mm' }}</td>
             <td>{{ angajat.adaugatde }}</td>
-           
+
         </tr>
     </tbody>
 </table>

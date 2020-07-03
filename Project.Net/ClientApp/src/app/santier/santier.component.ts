@@ -14,6 +14,8 @@ export class SantierComponent {
     public locatie: string;
     public nr_angajati: number; 
 
+    //filtru dupa locatie
+    public fl_locatie: string;
 
     constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
         this.loadSanteire();
@@ -26,6 +28,23 @@ export class SantierComponent {
             console.log(this.santiere);
         },
             error => console.error(error));
+    }
+
+    loadSantierFilterBy() {
+        if (this.fl_locatie != null) {
+            this.http.get<Santier[]>(this.baseUrl + 'api/santiers' + '?locatie=' + this.fl_locatie).subscribe(result => {
+                this.santiere = result;
+                console.log(this.santiere);
+            },
+                error => console.error(error));
+        }
+        else {
+            this.http.get<Santier[]>(this.baseUrl + 'api/santiers').subscribe(result => {
+                this.santiere = result;
+                console.log(this.santiere);
+            },
+                error => console.error(error));
+        }
     }
 
     delete(santierId: string) {

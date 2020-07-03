@@ -23,9 +23,15 @@ namespace Project.Net.Controllers
 
         // GET: api/Santiers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SantierePentruAngajati>>> GetSantiere()
+        public async Task<ActionResult<IEnumerable<SantierePentruAngajati>>> GetSantiere(
+            [FromQuery] string? locatie = null)
         {
             IQueryable<Santier> result = _context.Santiere;
+
+            if (locatie != null)
+            {
+                result = result.Where(s => s.Locatie.Contains(locatie));
+            }
 
             var resultList = await result
                 .Include(f => f.Angajati)

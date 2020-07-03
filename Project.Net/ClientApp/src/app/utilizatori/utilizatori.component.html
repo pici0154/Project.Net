@@ -1,0 +1,36 @@
+<h1 id="tableLabel">Utilizatori</h1>
+
+<p>Prenume: </p>
+<input [(ngModel)]="fl_prenume" />
+
+<a class="btn btn-primary" (click)="loadUtilizatorsFilterBy()">Filtreaza!</a>
+
+<p *ngIf="!utilizators"><em>Loading...</em></p>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="utilizators">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nume</th>
+            <th>Prenume</th>
+            <th>User</th>
+            <th>Parola</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let utilizator of utilizators">
+            <td>{{ utilizator.id }}</td>
+            <td>{{ utilizator.nume }}</td>
+            <td>{{ utilizator.prenume }}</td>
+            <td>{{ utilizator.user }}</td>
+            <td>{{ utilizator.parola }}</td>
+            <td>
+                <a class="btn btn-primary" [routerLink]="['/santier-details', utilizator.id]" routerLinkActive="active">Details</a> |
+                <a class="btn btn-info" (click)="edit($event,utilizator.id)">Edit</a> |
+                <a class="btn btn-danger" (click)="delete(utilizator.id)">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+

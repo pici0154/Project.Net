@@ -27,14 +27,14 @@ namespace Project.Net.Controllers
         /// <returns>A list of users</returns>
         // GET: api/Utilizators
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Utilizator>>> GetUtilizatori([FromQuery] String? nume = null)
+        public async Task<ActionResult<IEnumerable<Utilizator>>> GetUtilizatori([FromQuery] String? prenume = null)
         {
-            //filter by date from - date to 
+            //filter by prenume
             IQueryable<Utilizator> result = _context.Utilizatori;
 
-            if (nume != null)
+            if (prenume != null)
             {
-                result = result.Where(c => c.Nume.Contains(nume));
+                result = result.Where(c => c.Prenume.Contains(prenume));
             }
 
             var resultList = await result.ToListAsync();
