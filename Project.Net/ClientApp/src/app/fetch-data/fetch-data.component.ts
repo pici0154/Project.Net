@@ -28,7 +28,7 @@ export class FetchDataComponent {
             this.angajats = result;
             console.log(this.angajats);
         },
-            error => console.error("aici apare eroarea" + error));
+            error => console.error( error));
     }
 
     delete(angajatId: string) {

@@ -6,23 +6,22 @@ using System.Threading.Tasks;
 
 namespace Project.Net.ViewModels
 {
-    public class SantierePentruAngajati
+    public class SantierDetails
     {
         public long Id_Santier { get; set; }
         public string Locatie { get; set; }
         public string Nume_Santier { get; set; }
-        
-        public long Nr_angajati { get; set; }
+        public List<AngajatiDetails> Angajati { get; set; }
 
-        public static SantierePentruAngajati FromSantier(Santier santier)
+
+        public static SantierDetails FromSantier(Santier santier)
         {
-            return new SantierePentruAngajati
+            return new SantierDetails
             {
                 Id_Santier = santier.Id_Santier,
                 Locatie = santier.Locatie,
                 Nume_Santier = santier.Nume_Santier,
-                Nr_angajati = santier.Angajati.Count,
-              
+                Angajati = santier.Angajati.Select(c => AngajatiDetails.FromAngajat(c)).ToList()
             };
         }
     }

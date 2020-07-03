@@ -4,10 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cost-item-details',
-  templateUrl: './cost-item-details.component.html',
-  styleUrls: ['./cost-item-details.component.css']
+  templateUrl: './angajati-details.component.html',
+  styleUrls: ['./angajati-details.component.css']
 })
-export class CostItemDetailsComponent implements OnInit {
+export class AngajatiDetailsComponent implements OnInit {
     private angajat: AngajatiCuSantiere;
 
 

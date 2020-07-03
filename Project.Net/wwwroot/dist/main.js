@@ -1,5 +1,18 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/angajati-details/angajati-details.component.html":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/angajati-details/angajati-details.component.html ***!
+  \********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n<p *ngIf=\"!angajat\"><em>Loading...</em></p>\n\n<a [routerLink]=\"['/fetch-data']\" routerLinkActive=\"active\">Back</a>\n\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"angajat\">\n    <tbody>\n        <td>{{ angajat.id_Angajat }}</td>\n        <td>{{ angajat.nume }}</td>\n        </tbody>\n</table>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html":
 /*!**************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
@@ -13,32 +26,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/cost-item-details/cost-item-details.component.html":
-/*!**********************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/cost-item-details/cost-item-details.component.html ***!
-  \**********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n\n<p *ngIf=\"!angajat\"><em>Loading...</em></p>\n\n<a [routerLink]=\"['/fetch-data']\" routerLinkActive=\"active\">Back</a>\n\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"angajat\">\n    <tbody>\n    <td>{{ angajat.id_Angajat }}</td>\n    <td>{{ angajat.nume }}</td>\n\n\n    </tbody>\n</table>\n\n<h2>Santiere</h2>\n<table *ngIf=\"angajat\">\n    <thead>\n        <tr>\n            <th>Denumire santier</th>\n            <th>Locatie</th>\n        </tr>\n    </thead>\n    <tr *ngFor=\"let santier of angajat.santiere\">\n        <td>{{ santier.nume_santier }}</td>\n        <td>{{ santier.locatie }}</td>\n    </tr>\n</table>\n<a [routerLink]=\"['/fetch-data']\" routerLinkActive=\"active\">Back</a>\n");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/counter/counter.component.html":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/counter/counter.component.html ***!
-  \**************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Counter</h1>\n\n<p>This is a simple example of an Angular component.</p>\n\n<p aria-live=\"polite\">Current count: <strong>{{ currentCount }}</strong></p>\n\n<button class=\"btn btn-primary\" (click)=\"incrementCounter()\">Increment</button>\n\n\n\n<input type=\"text\" [(ngModel)]=\"name\" />\n\n<p>{{name}}</p>\n\n<input type=\"text\" [(ngModel)]=\"name\" />\n<input type=\"text\" [(ngModel)]=\"name\" />\n<input type=\"text\" [(ngModel)]=\"name\" />\n<input type=\"text\" [(ngModel)]=\"name\" />\n<input type=\"text\" [(ngModel)]=\"name\" />\n<input type=\"text\" [(ngModel)]=\"name\" />\n<input type=\"text\" [(ngModel)]=\"name\" />\n\n\n<input type=\"text\" value=\"{{name}}\" />\n\n\n\n<p>{{name}}</p>\n<p>{{name}}</p>\n<p>{{name}}</p>\n<p>{{name}}</p>\n<p>{{name}}</p>\n<p>{{name}}</p>\n<p>{{name}}</p>\n<p>{{name}}</p>\n<p>{{name}}</p>\n\n\n<input type=\"text\" value=\"{{name}}\" />\n\n\n\n<p> {{name}}</p>\n");
-
-/***/ }),
-
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/fetch-data/fetch-data.component.html":
 /*!********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/fetch-data/fetch-data.component.html ***!
@@ -48,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1 id=\"tableLabel\">Angajatii</h1>\n\n<p>This component demonstrates fetching data from the angajats server.</p>\n\n<p *ngIf=\"!angajats\"><em>Loading...</em></p>\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"angajats\">\n    <thead>\n        <tr>\n            <th>Id</th>\n            <th>Nume</th>\n            <th>Data</th>\n            <th>Ora start</th>\n            <th>Ora final</th>\n            <th>Pauza</th>\n            <th>Type</th>\n            <th>Adaugat de</th>\n            \n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let angajat of angajats\">\n            <td>{{ angajat.id_Angajat }}</td>\n            <td>{{ angajat.nume }}</td>\n            <td>{{ angajat.data }}</td> \n            <td>{{ angajat.ora_Start }}</td>\n            <td>{{ angajat.ora_Stop }}</td>\n            <td>{{ angajat.pauza }}</td>\n            <td>{{ angajat.adaugatde }}</td>\n            <td>\n                <a class=\"btn btn-primary\" [routerLink]=\"['/fetch-data', angajat.id_Angajat]\" routerLinkActive=\"active\">Details</a> |\n                <a class=\"btn btn-info\" (click)=\"edit($event,angajat.id_Angajat)\" >Edit</a> |\n                <a class=\"btn btn-danger\" (click)=\"delete(angajat.id_Angajat)\">Delete</a>\n            </td>\n        </tr>\n    </tbody>\n</table>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1 id=\"tableLabel\">Angajati</h1>\n\n<p *ngIf=\"!angajats\"><em>Loading...</em></p>\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"angajats\">\n    <thead>\n        <tr>\n            <th>Id</th>\n            <th>Nume</th>\n            <th>Data</th>\n            <th>Ora start</th>\n            <th>Ora final</th>\n            <th>Pauza</th>\n            <th>Adaugat de</th>\n            \n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let angajat of angajats\">\n            <td>{{ angajat.id_Angajat }}</td>\n            <td>{{ angajat.nume }}</td>\n            <td>{{ angajat.data | date:'yyyy/MM/dd' }}</td> \n            <td>{{ angajat.ora_Start | date:'HH:mm' }}</td>\n            <td>{{ angajat.ora_Stop | date:'HH:mm'}}</td>\n            <td>{{ angajat.pauza | date:'HH:mm' }}</td>\n            <td>{{ angajat.adaugatde }}</td>\n           \n        </tr>\n    </tbody>\n</table>\n\n\n");
 
 /***/ }),
 
@@ -74,7 +61,33 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header>\n    <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3\">\n        <div class=\"container\">\n            <a class=\"navbar-brand\" [routerLink]=\"['/']\">NetCoreAngularApp2</a>\n            <button class=\"navbar-toggler\"\n                    type=\"button\"\n                    data-toggle=\"collapse\"\n                    data-target=\".navbar-collapse\"\n                    aria-label=\"Toggle navigation\"\n                    [attr.aria-expanded]=\"isExpanded\"\n                    (click)=\"toggle()\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            <div class=\"navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse\"\n                 [ngClass]=\"{ show: isExpanded }\">\n                <ul class=\"navbar-nav flex-grow\">\n\n                    <li class=\"nav-item\"\n                        [routerLinkActive]=\"['link-active']\"\n                        [routerLinkActiveOptions]=\"{ exact: true }\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/']\">Home</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/counter']\">Counter</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/fetch-data']\">Fetch data</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/my-route']\">My route</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </nav>\n</header>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header>\n    <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3\">\n        <div class=\"container\">\n            <a class=\"navbar-brand\" [routerLink]=\"['/']\">NetCoreAngularApp2</a>\n            <button class=\"navbar-toggler\"\n                    type=\"button\"\n                    data-toggle=\"collapse\"\n                    data-target=\".navbar-collapse\"\n                    aria-label=\"Toggle navigation\"\n                    [attr.aria-expanded]=\"isExpanded\"\n                    (click)=\"toggle()\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            <div class=\"navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse\"\n                 [ngClass]=\"{ show: isExpanded }\">\n                <ul class=\"navbar-nav flex-grow\">\n\n                    <li class=\"nav-item\"\n                        [routerLinkActive]=\"['link-active']\"\n                        [routerLinkActiveOptions]=\"{ exact: true }\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/']\">Home</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/santier']\">Santiere</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/fetch-data']\">Fetch data- Lista angajati</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/my-route']\">My route</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </nav>\n</header>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/santier-details/santier-details.component.html":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/santier-details/santier-details.component.html ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n<p *ngIf=\"!santier\"><em>Loading...</em></p>\n\n<a [routerLink]=\"['/santier']\" routerLinkActive=\"active\">Back</a>\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"santier\">\n    <tbody>\n        <tr>\n            <th>Denuimire santier</th>\n            <td>{{ santier.nume_Santier }}</td>\n        </tr>\n\n        <tr>\n            <th>Locatie</th>\n            <td>{{ santier.locatie }}</td>\n        </tr>\n        \n    </tbody>\n</table>\n\n<h2>Angajati</h2>\n<table class='table table-striped' aria-labelledby=\"tableLabel\"  *ngIf=\"santier\">\n    <thead>\n        <tr>\n            <th>Nume</th> \n            <th>Data</th> \n            <th>Ora inceput</th> \n            <th>Ora sfarsit</th> \n            <th>Pauza</th> \n            <th>Ore lucrate</th> \n        </tr>\n    </thead>\n    <tr *ngFor=\"let angajat of santier.angajati\">\n        <td>{{ angajat.nume }}</td>\n        <td>{{ angajat.data | date:'yyyy/MM/dd'}}</td>\n        <td>{{ angajat.ora_Start | date:'HH:mm' }} </td>\n        <td>{{ angajat.ora_Stop | date:'HH:mm'}}</td>\n        <td>{{ angajat.pauza | date:'HH:mm' }}</td>\n        <td>{{ angajat.ore_Lucrate }}</td>\n\n     </tr>\n</table>\n<a [routerLink]=\"['/santier']\" routerLinkActive=\"active\">Back</a>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/santier/santier.component.html":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/santier/santier.component.html ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<h1 id=\"tableLabel\">Santiere</h1>\n\n<p *ngIf=\"!santiere\"><em>Loading...</em></p>\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"santiere\">\n    <thead>\n        <tr>\n            <th>Id</th>\n            <th>Nume</th>\n            <th>Locatie</th>\n            <th>Numar de angajati</th>\n\n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let santier of santiere\">\n            <td>{{ santier.id_Santier }}</td>\n            <td>{{ santier.locatie }}</td>\n            <td>{{ santier.nume_Santier }}</td>\n            <td>{{ santier.nr_angajati }}</td>  \n            <td>\n                <a class=\"btn btn-primary\" [routerLink]=\"['/santier-details', santier.id_Santier]\" routerLinkActive=\"active\">Details</a> |\n                <a class=\"btn btn-info\" (click)=\"edit($event,santier.id_Santier)\">Edit</a> |\n                <a class=\"btn btn-danger\" (click)=\"delete(santier.id_Santier)\">Delete</a>\n            </td>\n        </tr>\n    </tbody>\n</table>\n\n\n");
 
 /***/ }),
 
@@ -98,6 +111,94 @@ webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
 webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
+
+/***/ }),
+
+/***/ "./src/app/angajati-details/angajati-details.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/angajati-details/angajati-details.component.css ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FuZ2FqYXRpLWRldGFpbHMvYW5nYWphdGktZGV0YWlscy5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/angajati-details/angajati-details.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/angajati-details/angajati-details.component.ts ***!
+  \****************************************************************/
+/*! exports provided: AngajatiDetailsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AngajatiDetailsComponent", function() { return AngajatiDetailsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+let AngajatiDetailsComponent = class AngajatiDetailsComponent {
+    constructor(http, baseUrl, route) {
+        this.http = http;
+        this.baseUrl = baseUrl;
+        this.route = route;
+        this.enableEdit = false;
+        this.enableEditIndex = null;
+    }
+    loadCostItem(angajatId) {
+        this.http.get(this.baseUrl + 'api/angajats/' + angajatId).subscribe(result => {
+            this.angajat = result;
+            console.log(this.angajat);
+        }, error => console.error(error));
+    }
+    ngOnInit() {
+        this.route.paramMap.subscribe(params => {
+            this.loadCostItem(params.get('santierId'));
+        });
+    }
+    edit(santierId) {
+        this.enableEdit = true;
+        this.enableEditIndex = santierId;
+        console.log(santierId);
+    }
+};
+AngajatiDetailsComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }
+];
+AngajatiDetailsComponent = __decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        selector: 'app-cost-item-details',
+        template: __importDefault(__webpack_require__(/*! raw-loader!./angajati-details.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/angajati-details/angajati-details.component.html")).default,
+        styles: [__importDefault(__webpack_require__(/*! ./angajati-details.component.css */ "./src/app/angajati-details/angajati-details.component.css")).default]
+    }),
+    __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
+    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String, _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+], AngajatiDetailsComponent);
+
+
 
 /***/ }),
 
@@ -156,9 +257,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _nav_menu_nav_menu_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./nav-menu/nav-menu.component */ "./src/app/nav-menu/nav-menu.component.ts");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _counter_counter_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./counter/counter.component */ "./src/app/counter/counter.component.ts");
+/* harmony import */ var _santier_santier_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./santier/santier.component */ "./src/app/santier/santier.component.ts");
 /* harmony import */ var _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./fetch-data/fetch-data.component */ "./src/app/fetch-data/fetch-data.component.ts");
-/* harmony import */ var _cost_item_details_cost_item_details_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./cost-item-details/cost-item-details.component */ "./src/app/cost-item-details/cost-item-details.component.ts");
+/* harmony import */ var _angajati_details_angajati_details_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./angajati-details/angajati-details.component */ "./src/app/angajati-details/angajati-details.component.ts");
+/* harmony import */ var _santier_details_santier_details_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./santier-details/santier-details.component */ "./src/app/santier-details/santier-details.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -168,6 +270,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
   return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+
 
 
 
@@ -187,9 +290,10 @@ AppModule = __decorate([
             _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
             _nav_menu_nav_menu_component__WEBPACK_IMPORTED_MODULE_6__["NavMenuComponent"],
             _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"],
-            _counter_counter_component__WEBPACK_IMPORTED_MODULE_8__["CounterComponent"],
+            _santier_santier_component__WEBPACK_IMPORTED_MODULE_8__["SantierComponent"],
             _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_9__["FetchDataComponent"],
-            _cost_item_details_cost_item_details_component__WEBPACK_IMPORTED_MODULE_10__["CostItemDetailsComponent"],
+            _angajati_details_angajati_details_component__WEBPACK_IMPORTED_MODULE_10__["AngajatiDetailsComponent"],
+            _santier_details_santier_details_component__WEBPACK_IMPORTED_MODULE_11__["SantierDetailsComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"].withServerTransition({ appId: 'ng-cli-universal' }),
@@ -197,152 +301,25 @@ AppModule = __decorate([
             _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot([
                 { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"], pathMatch: 'full' },
-                { path: 'counter', component: _counter_counter_component__WEBPACK_IMPORTED_MODULE_8__["CounterComponent"] },
+                { path: 'santier', component: _santier_santier_component__WEBPACK_IMPORTED_MODULE_8__["SantierComponent"] },
+                {
+                    path: 'santier-details/:id_Santier',
+                    component: _santier_details_santier_details_component__WEBPACK_IMPORTED_MODULE_11__["SantierDetailsComponent"]
+                },
                 {
                     path: 'fetch-data',
                     component: _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_9__["FetchDataComponent"],
                 },
                 {
-                    path: 'fetch-data/:angajatId',
-                    component: _cost_item_details_cost_item_details_component__WEBPACK_IMPORTED_MODULE_10__["CostItemDetailsComponent"],
+                    path: 'fetch-data/:id_Angajat',
+                    component: _angajati_details_angajati_details_component__WEBPACK_IMPORTED_MODULE_10__["AngajatiDetailsComponent"],
                 },
-                { path: 'my-route', component: _counter_counter_component__WEBPACK_IMPORTED_MODULE_8__["CounterComponent"] },
             ])
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
     })
 ], AppModule);
-
-
-
-/***/ }),
-
-/***/ "./src/app/cost-item-details/cost-item-details.component.css":
-/*!*******************************************************************!*\
-  !*** ./src/app/cost-item-details/cost-item-details.component.css ***!
-  \*******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Nvc3QtaXRlbS1kZXRhaWxzL2Nvc3QtaXRlbS1kZXRhaWxzLmNvbXBvbmVudC5jc3MifQ== */");
-
-/***/ }),
-
-/***/ "./src/app/cost-item-details/cost-item-details.component.ts":
-/*!******************************************************************!*\
-  !*** ./src/app/cost-item-details/cost-item-details.component.ts ***!
-  \******************************************************************/
-/*! exports provided: CostItemDetailsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CostItemDetailsComponent", function() { return CostItemDetailsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
-  return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-
-
-
-let CostItemDetailsComponent = class CostItemDetailsComponent {
-    constructor(http, baseUrl, route) {
-        this.http = http;
-        this.baseUrl = baseUrl;
-        this.route = route;
-        this.enableEdit = false;
-        this.enableEditIndex = null;
-    }
-    loadCostItem(angajatId) {
-        this.http.get(this.baseUrl + 'api/angajats/' + angajatId).subscribe(result => {
-            this.angajat = result;
-            console.log(this.angajat);
-        }, error => console.error(error));
-    }
-    ngOnInit() {
-        this.route.paramMap.subscribe(params => {
-            this.loadCostItem(params.get('santierId'));
-        });
-    }
-    edit(santierId) {
-        this.enableEdit = true;
-        this.enableEditIndex = santierId;
-        console.log(santierId);
-    }
-};
-CostItemDetailsComponent.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
-    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }
-];
-CostItemDetailsComponent = __decorate([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-        selector: 'app-cost-item-details',
-        template: __importDefault(__webpack_require__(/*! raw-loader!./cost-item-details.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/cost-item-details/cost-item-details.component.html")).default,
-        styles: [__importDefault(__webpack_require__(/*! ./cost-item-details.component.css */ "./src/app/cost-item-details/cost-item-details.component.css")).default]
-    }),
-    __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
-    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String, _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
-], CostItemDetailsComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/counter/counter.component.ts":
-/*!**********************************************!*\
-  !*** ./src/app/counter/counter.component.ts ***!
-  \**********************************************/
-/*! exports provided: CounterComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CounterComponent", function() { return CounterComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
-  return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-
-let CounterComponent = class CounterComponent {
-    constructor() {
-        this.currentCount = 2;
-        this.name = "test";
-    }
-    incrementCounter() {
-        this.currentCount++;
-        this.name = '';
-    }
-};
-CounterComponent = __decorate([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-        selector: 'app-counter-component',
-        template: __importDefault(__webpack_require__(/*! raw-loader!./counter.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/counter/counter.component.html")).default
-    })
-], CounterComponent);
 
 
 
@@ -387,7 +364,7 @@ let FetchDataComponent = class FetchDataComponent {
         this.http.get(this.baseUrl + 'api/angajats').subscribe(result => {
             this.angajats = result;
             console.log(this.angajats);
-        }, error => console.error("aici apare eroarea" + error));
+        }, error => console.error(error));
     }
     delete(angajatId) {
         if (confirm('Are you sure you want to delete the employee with id ' + angajatId + '?')) {
@@ -531,6 +508,177 @@ NavMenuComponent = __decorate([
         styles: [__importDefault(__webpack_require__(/*! ./nav-menu.component.css */ "./src/app/nav-menu/nav-menu.component.css")).default]
     })
 ], NavMenuComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/santier-details/santier-details.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/santier-details/santier-details.component.css ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NhbnRpZXItZGV0YWlscy9zYW50aWVyLWRldGFpbHMuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/santier-details/santier-details.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/santier-details/santier-details.component.ts ***!
+  \**************************************************************/
+/*! exports provided: SantierDetailsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SantierDetailsComponent", function() { return SantierDetailsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+let SantierDetailsComponent = class SantierDetailsComponent {
+    constructor(http, baseUrl, route) {
+        this.http = http;
+        this.baseUrl = baseUrl;
+        this.route = route;
+    }
+    loadSantier(santierId) {
+        this.http.get(this.baseUrl + 'api/santiers/' + santierId).subscribe(result => {
+            this.santier = result;
+            console.log(this.santier);
+        }, error => console.error(error));
+    }
+    ngOnInit() {
+        this.route.paramMap.subscribe(params => {
+            this.loadSantier(params.get('id_Santier'));
+        });
+    }
+};
+SantierDetailsComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }
+];
+SantierDetailsComponent = __decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        selector: 'app-santier-details',
+        template: __importDefault(__webpack_require__(/*! raw-loader!./santier-details.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/santier-details/santier-details.component.html")).default,
+        styles: [__importDefault(__webpack_require__(/*! ./santier-details.component.css */ "./src/app/santier-details/santier-details.component.css")).default]
+    }),
+    __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
+    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String, _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+], SantierDetailsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/santier/santier.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/santier/santier.component.ts ***!
+  \**********************************************/
+/*! exports provided: SantierComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SantierComponent", function() { return SantierComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+let SantierComponent = class SantierComponent {
+    constructor(http, baseUrl) {
+        this.http = http;
+        this.baseUrl = baseUrl;
+        this.loadSanteire();
+    }
+    loadSanteire() {
+        this.http.get(this.baseUrl + 'api/santiers').subscribe(result => {
+            this.santiere = result;
+            console.log(this.santiere);
+        }, error => console.error(error));
+    }
+    delete(santierId) {
+        if (confirm('Are you sure you want to delete the santier with id ' + santierId + '?')) {
+            this.http.delete(this.baseUrl + 'api/santiers/' + santierId)
+                .subscribe(result => {
+                alert('employee successfully deleted!');
+                this.loadSanteire();
+            }, error => alert('Cannot delete employee - maybe it has comments?'));
+        }
+    }
+    submit() {
+        var santier = {};
+        santier.nume = this.nume;
+        santier.locatie = this.locatie;
+        this.http.post(this.baseUrl + 'api/santiers', santier).subscribe(result => {
+            console.log('success!');
+            this.loadSanteire();
+        }, error => {
+            if (error.status == 400) {
+                console.log(error.error.errors);
+                if (error.error.errors.Sum != "") {
+                    // this.sumE = error.error.errors.Sum[0];
+                }
+                else if (error.error.errors.Description != "") {
+                    // this.descriptionE = error.error.errors.Description[0];
+                }
+                else if (error.error.errors.Type != "") {
+                    // this.typeE = error.error.errors.Type[0];
+                }
+            }
+        });
+    }
+};
+SantierComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] }
+];
+SantierComponent = __decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        selector: 'app-fetch-data',
+        template: __importDefault(__webpack_require__(/*! raw-loader!./santier.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/santier/santier.component.html")).default
+    }),
+    __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
+    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
+], SantierComponent);
 
 
 

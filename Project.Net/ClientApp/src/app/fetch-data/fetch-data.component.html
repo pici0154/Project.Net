@@ -1,6 +1,4 @@
-<h1 id="tableLabel">Angajatii</h1>
-
-<p>This component demonstrates fetching data from the angajats server.</p>
+<h1 id="tableLabel">Angajati</h1>
 
 <p *ngIf="!angajats"><em>Loading...</em></p>
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="angajats">
@@ -12,7 +10,6 @@
             <th>Ora start</th>
             <th>Ora final</th>
             <th>Pauza</th>
-            <th>Type</th>
             <th>Adaugat de</th>
             
         </tr>
@@ -21,16 +18,12 @@
         <tr *ngFor="let angajat of angajats">
             <td>{{ angajat.id_Angajat }}</td>
             <td>{{ angajat.nume }}</td>
-            <td>{{ angajat.data }}</td> 
-            <td>{{ angajat.ora_Start }}</td>
-            <td>{{ angajat.ora_Stop }}</td>
-            <td>{{ angajat.pauza }}</td>
+            <td>{{ angajat.data | date:'yyyy/MM/dd' }}</td> 
+            <td>{{ angajat.ora_Start | date:'HH:mm' }}</td>
+            <td>{{ angajat.ora_Stop | date:'HH:mm'}}</td>
+            <td>{{ angajat.pauza | date:'HH:mm' }}</td>
             <td>{{ angajat.adaugatde }}</td>
-            <td>
-                <a class="btn btn-primary" [routerLink]="['/fetch-data', angajat.id_Angajat]" routerLinkActive="active">Details</a> |
-                <a class="btn btn-info" (click)="edit($event,angajat.id_Angajat)" >Edit</a> |
-                <a class="btn btn-danger" (click)="delete(angajat.id_Angajat)">Delete</a>
-            </td>
+           
         </tr>
     </tbody>
 </table>

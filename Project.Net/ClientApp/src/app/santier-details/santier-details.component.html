@@ -1,0 +1,42 @@
+
+<p *ngIf="!santier"><em>Loading...</em></p>
+
+<a [routerLink]="['/santier']" routerLinkActive="active">Back</a>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="santier">
+    <tbody>
+        <tr>
+            <th>Denuimire santier</th>
+            <td>{{ santier.nume_Santier }}</td>
+        </tr>
+
+        <tr>
+            <th>Locatie</th>
+            <td>{{ santier.locatie }}</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<h2>Angajati</h2>
+<table class='table table-striped' aria-labelledby="tableLabel"  *ngIf="santier">
+    <thead>
+        <tr>
+            <th>Nume</th> 
+            <th>Data</th> 
+            <th>Ora inceput</th> 
+            <th>Ora sfarsit</th> 
+            <th>Pauza</th> 
+            <th>Ore lucrate</th> 
+        </tr>
+    </thead>
+    <tr *ngFor="let angajat of santier.angajati">
+        <td>{{ angajat.nume }}</td>
+        <td>{{ angajat.data | date:'yyyy/MM/dd'}}</td>
+        <td>{{ angajat.ora_Start | date:'HH:mm' }} </td>
+        <td>{{ angajat.ora_Stop | date:'HH:mm'}}</td>
+        <td>{{ angajat.pauza | date:'HH:mm' }}</td>
+        <td>{{ angajat.ore_Lucrate }}</td>
+
+     </tr>
+</table>
+<a [routerLink]="['/santier']" routerLinkActive="active">Back</a>

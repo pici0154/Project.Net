@@ -12,11 +12,9 @@ namespace Project.Net.Models
     {
         [Key]
         public long Id_Santier { get; set; }
-
         public string Locatie { get; set; }
         public string Nume_Santier{ get; set; }
-       
-        public Angajat Angajat { get; set; }
+        public List<Angajat> Angajati { get; set; }
         public Utilizator User { get; set; }
        
 

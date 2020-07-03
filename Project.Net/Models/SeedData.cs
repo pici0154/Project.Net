@@ -44,7 +44,7 @@ namespace Project.Net.Models
 
                         Ora_Start = DateTime.Now, //new TimeSpan(10, 2, 30),
 
-                        Ora_Stop = DateTime.Now, //new TimeSpan(10, 2, 30),
+                       Ora_Stop = DateTime.Now, //new TimeSpan(10, 2, 30),
 
                         Pauza = DateTime.Now, // new TimeSpan(10, 2, 30)
                     },
@@ -66,21 +66,27 @@ namespace Project.Net.Models
                 );
 
 
-                //////// Look for any flowers.
-                ////if (context.Santiere.Any())
-                ////{
-                ////    return;   // DB table has been seeded
-                ////}
+                //// Look for any flowers.
+                if (context.Santiere.Any())
+                {
+                    return;   // DB table has been seeded
+                }
 
-                ////context.Santiere.AddRange(
-                ////    new Santier
-                ////    {
-                ////        Locatie = "Cluj",
-                ////        Nume_Santier = "Gheorgheni",
-                    
-                ////    }
+                context.Santiere.AddRange(
+                    new Santier
+                    {
+                        Locatie = "Cluj",
+                        Nume_Santier = "Gheorgheni",
 
-                ////);
+                    },
+                     new Santier
+                     {
+                         Locatie = "Cluj",
+                         Nume_Santier = "Grigorescu",
+
+                     }
+
+                );
 
                 context.SaveChanges();
             }

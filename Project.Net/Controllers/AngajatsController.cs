@@ -30,7 +30,7 @@ namespace Project.Net.Controllers
         // GET: api/CostItems
         // GET: api/Angajats
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AngajatiDetalii>>> GetAngajati(
+        public async Task<ActionResult<IEnumerable<AngajatiDetails>>> GetAngajati(
              [FromQuery] DateTimeOffset? from = null,
             [FromQuery] DateTimeOffset? to = null)
         {
@@ -52,8 +52,8 @@ namespace Project.Net.Controllers
             }
 
             var resultList = await result
-                .Include(f => f.Santier)
-                 .Select(f => AngajatiDetalii.FromSantier(f))
+               // .Include(f => f.Santier)
+                 .Select(f => AngajatiDetails.FromAngajat(f))
                 .ToListAsync();
 
             return resultList;
@@ -66,8 +66,21 @@ namespace Project.Net.Controllers
         /// <returns>Returns the searched employee</returns>
         // GET: api/Angajats/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Angajat>> GetAngajat(long id)
+        public async Task<ActionResult<AngajatiDetails>> GetAngajat(long id)
         {
+            var angajat = await _context
+                                    .Angajati
+                                   // .Include(a => a.Santier )
+                                    .FirstOrDefaultAsync(a => a.Id_Angajat == id);
+
+            if (angajat == null)
+            {
+                return NotFound();
+            }
+
+            return AngajatiDetails.FromAngajat(angajat);
+
+            /*
             var angajat = await _context.Angajati.FindAsync(id);
 
             if (angajat == null)
@@ -76,6 +89,7 @@ namespace Project.Net.Controllers
             }
 
             return angajat;
+*/
         }
 
         /// <summary>

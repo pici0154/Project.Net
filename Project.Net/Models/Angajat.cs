@@ -19,10 +19,11 @@ namespace Project.Net.Models
 
         public DateTime Ora_Stop { get; set; }
 
-        public DateTime Pauza { get; set; }
+        public long Ore_Lucrate { get; set; }
+         public DateTime Pauza { get; set; }
 
         public Utilizator AdaugatDe { get; set; }
 
-        public List<Santier> Santier { get; set; }
+        public Santier Santier { get; set; }
     }
 }

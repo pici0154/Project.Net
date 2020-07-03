@@ -7,18 +7,20 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
+import { SantierComponent } from './santier/santier.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { CostItemDetailsComponent } from './cost-item-details/cost-item-details.component'; 
+import { AngajatiDetailsComponent } from './angajati-details/angajati-details.component';
+import { SantierDetailsComponent } from './santier-details/santier-details.component'; 
 
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
         HomeComponent,
-        CounterComponent,
+        SantierComponent,
         FetchDataComponent,
-        CostItemDetailsComponent, 
+        AngajatiDetailsComponent,
+        SantierDetailsComponent, 
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -26,22 +28,20 @@ import { CostItemDetailsComponent } from './cost-item-details/cost-item-details.
         FormsModule,
         RouterModule.forRoot([
             { path: '', component: HomeComponent, pathMatch: 'full' },
-            { path: 'counter', component: CounterComponent },
+            { path: 'santier', component: SantierComponent },
+            {
+                path: 'santier-details/:id_Santier',
+                component: SantierDetailsComponent
+            },
             {
                 path: 'fetch-data',
                 component: FetchDataComponent,
-                //children: [
-                //    {
-                //        path: 'flower-details/:flowerId',
-                //        component: FlowerDetailsComponent
-                //    }
-                //]
             },
             {
-                path: 'fetch-data/:angajatId',
-                component: CostItemDetailsComponent,
+                path: 'fetch-data/:id_Angajat',
+                component: AngajatiDetailsComponent,
             },
-            { path: 'my-route', component: CounterComponent },
+          //  { path: 'my-route', component: CounterComponent },
         ])
     ],
     providers: [],
