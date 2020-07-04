@@ -1,3 +1,5 @@
+
+
 <h1 id="tableLabel">Santiere</h1>
 
 <p>Locatie: </p>
@@ -23,9 +25,9 @@
             <td>{{ santier.nume_Santier }}</td>
             <td>{{ santier.nr_angajati }}</td>
             <td>
-                <a class="btn btn-primary" [routerLink]="['/santier-details', santier.id_Santier]" routerLinkActive="active">Details</a> |
-                <a class="btn btn-info" (click)="edit($event,santier.id_Santier)">Edit</a> |
-                <a class="btn btn-danger" (click)="delete(santier.id_Santier)">Delete</a>
+                <a class="btn-link" [routerLink]="['/santier-details', santier.id_Santier]" routerLinkActive="active">Details</a> |
+                <a class="btn-info" [routerLink]="['/santier-edit', santier.id_Santier]" routerLinkActive="active">Edit</a> |
+                <a class="btn-danger" (click)="delete(santier.id_Santier)">Delete</a>
             </td>
         </tr>
     </tbody>

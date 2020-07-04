@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
+import { LogOutComponent } from './log-out/log-out.component';
+import { SantierEditComponent } from './santier-edit/santier-edit.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +33,9 @@ import { LoginComponent } from './login/login.component';
         SantierDetailsComponent,
         UtilizatoriComponent,
         LoginComponent,
-        RegistrationComponent
+        RegistrationComponent,
+        LogOutComponent,
+        SantierEditComponent
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -44,24 +48,25 @@ import { LoginComponent } from './login/login.component';
             },
 
             {
-                path: 'santier',
-                component: SantierComponent
+                path: 'santier',                component: SantierComponent
+             //   loadChildren: './santier/santier.module#SantierModule'
             },
 
             {
-                path: 'santier-details/:id_Santier',
-                component: SantierDetailsComponent
+                path: 'santier-details/:id_Santier',                component: SantierDetailsComponent
             },
             {
-                path: 'fetch-data',
-                component: FetchDataComponent,
+                path: 'santier-edit/:id_Santier',              component: SantierEditComponent
             },
             {
-                path: 'utilizatori',
-                component: UtilizatoriComponent,
+                path: 'fetch-data',                component: FetchDataComponent,
+            },
+            {
+                path: 'utilizatori',                component: UtilizatoriComponent,
             },
             { path: 'login', component: LoginComponent },
-            { path: 'register', component: RegistrationComponent }
+            { path: 'register', component: RegistrationComponent },
+            { path: 'log-out', component: LogOutComponent }
             
         ]),
         AngularMaterialModule,

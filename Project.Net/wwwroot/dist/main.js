@@ -39,6 +39,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/log-out/log-out.component.html":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/log-out/log-out.component.html ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<button mat-stroked-button color=\"accent\" class=\"btn-block\" (click)=\"logoutUser()\">Log out</button>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html":
 /*!**********************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html ***!
@@ -61,7 +74,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header>\n    <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3\">\n        <div class=\"container\">\n            <a class=\"navbar-brand\" [routerLink]=\"['/']\"> </a>\n            <button class=\"navbar-toggler\"\n                    type=\"button\"\n                    data-toggle=\"collapse\"\n                    data-target=\".navbar-collapse\"\n                    aria-label=\"Toggle navigation\"\n                    [attr.aria-expanded]=\"isExpanded\"\n                    (click)=\"toggle()\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            <div class=\"navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse\"\n                 [ngClass]=\"{ show: isExpanded }\">\n                <ul class=\"navbar-nav flex-grow\">\n\n                    <li class=\"nav-item\"\n                        [routerLinkActive]=\"['link-active']\"\n                        [routerLinkActiveOptions]=\"{ exact: true }\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/']\">Home</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/santier']\">Santiere</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/fetch-data']\"> Lista angajati</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/utilizatori']\"> Lista utilizatori</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/register']\">Register</a>\n                    </li>\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/login']\">Sign In</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </nav>\n</header>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header>\n    <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3\">\n        <div class=\"container\">\n            <a class=\"navbar-brand\" [routerLink]=\"['/']\"> </a>\n            <button class=\"navbar-toggler\"\n                    type=\"button\"\n                    data-toggle=\"collapse\"\n                    data-target=\".navbar-collapse\"\n                    aria-label=\"Toggle navigation\"\n                    [attr.aria-expanded]=\"isExpanded\"\n                    (click)=\"toggle()\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            <div class=\"navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse\"\n                 [ngClass]=\"{ show: isExpanded }\">\n                <ul class=\"navbar-nav flex-grow\">\n\n                    <li class=\"nav-item\"\n                        [routerLinkActive]=\"['link-active']\"\n                        [routerLinkActiveOptions]=\"{ exact: true }\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/']\">Home</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/santier']\">Santiere</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/fetch-data']\"> Lista angajati</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/utilizatori']\"> Lista utilizatori</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/register']\">Register</a>\n                    </li>\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/login']\">Sign In</a>\n                    </li>\n\n                    <li class=\"nav-item\" [routerLinkActive]=\"['link-active']\">\n                        <a class=\"nav-link text-dark\" [routerLink]=\"['/log-out']\">Logout</a>\n                    </li>\n\n                </ul>\n            </div>\n        </div>\n    </nav>\n</header>\n");
 
 /***/ }),
 
@@ -91,6 +104,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/santier-edit/santier-edit.component.html":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/santier-edit/santier-edit.component.html ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n    <a [routerLink]=\"['/santier']\" routerLinkActive=\"active\">Back</a>\n<p>\n    Modifica un santier\n</p>\n\n<p>Id:</p>\n<input type=\"number\" [(ngModel)]=\"update_id\" *ngIf=\"santier\" disabled >\n\n\n<p>Locatie:</p>\n<input [(ngModel)]=\"update_locatie\" *ngIf=\"santier\" />\n<p>{{santier.locatie }}</p>\n\n<p>Denumire santier:</p>\n<input [(ngModel)]=\"update_numesantier\" *ngIf=\"santier\" />\n<p>{{santier.nume_Santier}}</p>\n\n<button (click)=\"update()\">Modifica</button>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/santier/santier.component.html":
 /*!**************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/santier/santier.component.html ***!
@@ -100,7 +126,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1 id=\"tableLabel\">Santiere</h1>\n\n<p>Locatie: </p>\n<input [(ngModel)]=\"fl_locatie\" />\n\n<a class=\"btn btn-primary\" (click)=\"loadSantierFilterBy()\">Filtreaza!</a>\n\n<p *ngIf=\"!santiere\"><em>Loading...</em></p>\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"santiere\">\n    <thead>\n        <tr>\n            <th>Id</th>\n            <th>Locatie</th>\n            <th>Denumire santier</th>\n            <th>Numar de angajati</th>\n\n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let santier of santiere\">\n            <td>{{ santier.id_Santier }}</td>\n            <td>{{ santier.locatie }}</td>\n            <td>{{ santier.nume_Santier }}</td>\n            <td>{{ santier.nr_angajati }}</td>\n            <td>\n                <a class=\"btn btn-primary\" [routerLink]=\"['/santier-details', santier.id_Santier]\" routerLinkActive=\"active\">Details</a> |\n                <a class=\"btn btn-info\" (click)=\"edit($event,santier.id_Santier)\">Edit</a> |\n                <a class=\"btn btn-danger\" (click)=\"delete(santier.id_Santier)\">Delete</a>\n            </td>\n        </tr>\n    </tbody>\n</table>\n\n<p>Adauga un nou santier</p>\n<p>Locatie:</p>\n<input [(ngModel)]=\"create_locatie\"  />\n<p>{{create_locatie}}</p><p style=\"color:red;\">{{create_locatieError}}</p>\n\n<p>Denumire santier:</p>\n<input [(ngModel)]=\"create_numesantier\" />\n<p>{{create_numesantier}}</p><p style=\"color:red;\">{{create_numesantierError}}</p>\n\n<button (click)=\"submit()\">Adauga</button>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n<h1 id=\"tableLabel\">Santiere</h1>\n\n<p>Locatie: </p>\n<input [(ngModel)]=\"fl_locatie\" />\n\n<a class=\"btn btn-primary\" (click)=\"loadSantierFilterBy()\">Filtreaza!</a>\n\n<p *ngIf=\"!santiere\"><em>Loading...</em></p>\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"santiere\">\n    <thead>\n        <tr>\n            <th>Id</th>\n            <th>Locatie</th>\n            <th>Denumire santier</th>\n            <th>Numar de angajati</th>\n\n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let santier of santiere\">\n            <td>{{ santier.id_Santier }}</td>\n            <td>{{ santier.locatie }}</td>\n            <td>{{ santier.nume_Santier }}</td>\n            <td>{{ santier.nr_angajati }}</td>\n            <td>\n                <a class=\"btn-link\" [routerLink]=\"['/santier-details', santier.id_Santier]\" routerLinkActive=\"active\">Details</a> |\n                <a class=\"btn-info\" [routerLink]=\"['/santier-edit', santier.id_Santier]\" routerLinkActive=\"active\">Edit</a> |\n                <a class=\"btn-danger\" (click)=\"delete(santier.id_Santier)\">Delete</a>\n            </td>\n        </tr>\n    </tbody>\n</table>\n\n<p>Adauga un nou santier</p>\n<p>Locatie:</p>\n<input [(ngModel)]=\"create_locatie\"  />\n<p>{{create_locatie}}</p><p style=\"color:red;\">{{create_locatieError}}</p>\n\n<p>Denumire santier:</p>\n<input [(ngModel)]=\"create_numesantier\" />\n<p>{{create_numesantier}}</p><p style=\"color:red;\">{{create_numesantierError}}</p>\n\n<button (click)=\"submit()\">Adauga</button>\n");
 
 /***/ }),
 
@@ -204,6 +230,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
 /* harmony import */ var _registration_registration_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./registration/registration.component */ "./src/app/registration/registration.component.ts");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _log_out_log_out_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./log-out/log-out.component */ "./src/app/log-out/log-out.component.ts");
+/* harmony import */ var _santier_edit_santier_edit_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./santier-edit/santier-edit.component */ "./src/app/santier-edit/santier-edit.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -213,6 +241,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
   return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+
+
 
 
 
@@ -243,7 +273,9 @@ AppModule = __decorate([
             _santier_details_santier_details_component__WEBPACK_IMPORTED_MODULE_12__["SantierDetailsComponent"],
             _utilizatori_utilizatori_component__WEBPACK_IMPORTED_MODULE_13__["UtilizatoriComponent"],
             _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"],
-            _registration_registration_component__WEBPACK_IMPORTED_MODULE_15__["RegistrationComponent"]
+            _registration_registration_component__WEBPACK_IMPORTED_MODULE_15__["RegistrationComponent"],
+            _log_out_log_out_component__WEBPACK_IMPORTED_MODULE_17__["LogOutComponent"],
+            _santier_edit_santier_edit_component__WEBPACK_IMPORTED_MODULE_18__["SantierEditComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"].withServerTransition({ appId: 'ng-cli-universal' }),
@@ -255,23 +287,24 @@ AppModule = __decorate([
                     component: _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"], pathMatch: 'full'
                 },
                 {
-                    path: 'santier',
-                    component: _santier_santier_component__WEBPACK_IMPORTED_MODULE_10__["SantierComponent"]
+                    path: 'santier', component: _santier_santier_component__WEBPACK_IMPORTED_MODULE_10__["SantierComponent"]
+                    //   loadChildren: './santier/santier.module#SantierModule'
                 },
                 {
-                    path: 'santier-details/:id_Santier',
-                    component: _santier_details_santier_details_component__WEBPACK_IMPORTED_MODULE_12__["SantierDetailsComponent"]
+                    path: 'santier-details/:id_Santier', component: _santier_details_santier_details_component__WEBPACK_IMPORTED_MODULE_12__["SantierDetailsComponent"]
                 },
                 {
-                    path: 'fetch-data',
-                    component: _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_11__["FetchDataComponent"],
+                    path: 'santier-edit/:id_Santier', component: _santier_edit_santier_edit_component__WEBPACK_IMPORTED_MODULE_18__["SantierEditComponent"]
                 },
                 {
-                    path: 'utilizatori',
-                    component: _utilizatori_utilizatori_component__WEBPACK_IMPORTED_MODULE_13__["UtilizatoriComponent"],
+                    path: 'fetch-data', component: _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_11__["FetchDataComponent"],
+                },
+                {
+                    path: 'utilizatori', component: _utilizatori_utilizatori_component__WEBPACK_IMPORTED_MODULE_13__["UtilizatoriComponent"],
                 },
                 { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"] },
-                { path: 'register', component: _registration_registration_component__WEBPACK_IMPORTED_MODULE_15__["RegistrationComponent"] }
+                { path: 'register', component: _registration_registration_component__WEBPACK_IMPORTED_MODULE_15__["RegistrationComponent"] },
+                { path: 'log-out', component: _log_out_log_out_component__WEBPACK_IMPORTED_MODULE_17__["LogOutComponent"] }
             ]),
             _shared_angular_material_module__WEBPACK_IMPORTED_MODULE_5__["AngularMaterialModule"],
             _core_core_module__WEBPACK_IMPORTED_MODULE_6__["CoreModule"],
@@ -805,6 +838,77 @@ HomeComponent = __decorate([
 
 /***/ }),
 
+/***/ "./src/app/log-out/log-out.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/log-out/log-out.component.css ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZy1vdXQvbG9nLW91dC5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/log-out/log-out.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/log-out/log-out.component.ts ***!
+  \**********************************************/
+/*! exports provided: LogOutComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogOutComponent", function() { return LogOutComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _core_services_security_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core/services/security.service */ "./src/app/core/services/security.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+let LogOutComponent = class LogOutComponent {
+    constructor(securityService, router) {
+        this.securityService = securityService;
+        this.router = router;
+        this.loginModel = {};
+    }
+    ngOnInit() {
+    }
+    logoutUser() {
+        this.router.navigate(['/login']);
+        this.securityService.logout();
+    }
+};
+LogOutComponent.ctorParameters = () => [
+    { type: _core_services_security_service__WEBPACK_IMPORTED_MODULE_1__["SecurityService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+LogOutComponent = __decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        selector: 'app-log-out',
+        template: __importDefault(__webpack_require__(/*! raw-loader!./log-out.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/log-out/log-out.component.html")).default,
+        styles: [__importDefault(__webpack_require__(/*! ./log-out.component.css */ "./src/app/log-out/log-out.component.css")).default]
+    }),
+    __metadata("design:paramtypes", [_core_services_security_service__WEBPACK_IMPORTED_MODULE_1__["SecurityService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+], LogOutComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/login/login.component.css":
 /*!*******************************************!*\
   !*** ./src/app/login/login.component.css ***!
@@ -858,6 +962,10 @@ let LoginComponent = class LoginComponent {
         this.securityService.login(this.loginModel).subscribe(token => {
             this.router.navigate(['/fetch-data']);
         });
+    }
+    logoutUser() {
+        this.router.navigate(['/fetch-data']);
+        this.securityService.logout();
     }
 };
 LoginComponent.ctorParameters = () => [
@@ -1082,6 +1190,117 @@ SantierDetailsComponent = __decorate([
     __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
     __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String, _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
 ], SantierDetailsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/santier-edit/santier-edit.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/santier-edit/santier-edit.component.css ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NhbnRpZXItZWRpdC9zYW50aWVyLWVkaXQuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/santier-edit/santier-edit.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/santier-edit/santier-edit.component.ts ***!
+  \********************************************************/
+/*! exports provided: SantierEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SantierEditComponent", function() { return SantierEditComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+
+let SantierEditComponent = class SantierEditComponent {
+    constructor(http, baseUrl, route, router) {
+        this.http = http;
+        this.baseUrl = baseUrl;
+        this.route = route;
+        this.router = router;
+        this.update_id = this.route.snapshot.params['id_Santier'];
+    }
+    loadSantier(santierId) {
+        this.http.get(this.baseUrl + 'api/santiers/' + santierId).subscribe(result => {
+            this.santier = result;
+            console.log(this.santier);
+        }, error => console.error(error));
+    }
+    ngOnInit() {
+        this.route.paramMap.subscribe(params => {
+            this.loadSantier(params.get('id_Santier'));
+        });
+    }
+    update(santierId) {
+        var santier = {};
+        santier.id_Santier = Number(this.update_id);
+        santier.locatie = this.update_locatie;
+        santier.nume_Santier = this.update_numesantier;
+        this.http.put(this.baseUrl + 'api/santiers/' + santier.id_Santier, santier).subscribe(result => {
+            console.log('success!');
+            // this.loadSantier();
+            alert("S-a modificat cu succes!");
+        }, error => {
+            if (error.status == 400) {
+                console.log(error.error.errors);
+                if (error.error.errors.Sum != "") {
+                    // this.sumE = error.error.errors.Sum[0];
+                }
+                else if (error.error.errors.Description != "") {
+                    // this.descriptionE = error.error.errors.Description[0];
+                }
+                else if (error.error.errors.Type != "") {
+                    // this.typeE = error.error.errors.Type[0];
+                }
+            }
+        });
+        //  this.router.navigate(['/santier']);
+    }
+};
+SantierEditComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+SantierEditComponent = __decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        selector: 'app-santier-edit',
+        template: __importDefault(__webpack_require__(/*! raw-loader!./santier-edit.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/santier-edit/santier-edit.component.html")).default,
+        styles: [__importDefault(__webpack_require__(/*! ./santier-edit.component.css */ "./src/app/santier-edit/santier-edit.component.css")).default]
+    }),
+    __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
+    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String, _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+], SantierEditComponent);
 
 
 

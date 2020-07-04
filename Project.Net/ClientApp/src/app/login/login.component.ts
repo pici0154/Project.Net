@@ -24,4 +24,10 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/fetch-data']);
         });
     }
+
+    logoutUser() {
+        this.router.navigate(['/fetch-data']);
+        this.securityService.logout();            
+    }
+
 }

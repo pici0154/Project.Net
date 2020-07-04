@@ -1,0 +1,19 @@
+
+    <a [routerLink]="['/santier']" routerLinkActive="active">Back</a>
+<p>
+    Modifica un santier
+</p>
+
+<p>Id:</p>
+<input type="number" [(ngModel)]="update_id" *ngIf="santier" disabled >
+
+
+<p>Locatie:</p>
+<input [(ngModel)]="update_locatie" *ngIf="santier" />
+<p>{{santier.locatie }}</p>
+
+<p>Denumire santier:</p>
+<input [(ngModel)]="update_numesantier" *ngIf="santier" />
+<p>{{santier.nume_Santier}}</p>
+
+<button (click)="update()">Modifica</button>
